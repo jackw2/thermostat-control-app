@@ -49,3 +49,9 @@ class Thermostat:
   
   def set_location(self, location) -> bool:
     return self.device.login() and self.device.set_away(location)
+  
+  def set_setpoints(self, heat_to, cool_to) -> bool:
+    return self.device.login() and self.device.set_setpoints(heat_to, cool_to)
+  
+  def set_mode(self, mode) -> bool:
+    return self.device.login() and self.device.set_mode(mode)
