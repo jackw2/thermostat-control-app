@@ -1,14 +1,9 @@
 # Author: Jack Wesolowski
 # https://github.com/jackw2
 
-from venstarcolortouch import VenstarColorTouch
-import json
+
 
 # Read from config.jsonn
-with open('config.json', 'r') as file:
-  config = json.load(file)
-
-device_info = config['device_info']
 
 ct = VenstarColorTouch(device_info["ip_address"], timeout=5)
 
@@ -19,3 +14,13 @@ if ct.update_info() is True:
   print("Was able to get info:{0}".format(ct._info))
 else:
   print("Was not able to get info")
+
+data = {
+  "state": ct.get_info("state"),
+  "away": ct.get_info("away"),
+  "spacetemp": ct.get_info("spacetemp"),
+  "heattemp": ct.get_info("heattemp"),
+  "cooltemp": ct.get_info("cooltemp")
+}
+print(data)
+
