@@ -25,7 +25,7 @@ async def set_location(location: str = Query(...)):
         case _:
             raise HTTPException(status_code=400)
     print(set_to)
-    if device.set_away(set_to):
+    if thermostat.set_location(set_to):
         return {"message": "Location set successfully"}
     else:
         raise HTTPException(status_code=500)

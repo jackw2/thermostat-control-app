@@ -23,6 +23,8 @@ class Thermostat:
       self.device_info["ip_address"],
       timeout=self.device_info["timeout"]
     )
+    self.login()
+    self.device.update_info()
 
   def login(self) -> bool:
     if self.device.login() is True:
@@ -34,7 +36,7 @@ class Thermostat:
       return False
 
   def get_data(self) -> dict:
-    if self.login() and self.device.update_info() is True:
+    if self.device.login() and self.device.update_info() is True:
       data = {
           "state": self.device.get_info("state"),
           "away": self.device.get_info("away"),
@@ -45,3 +47,5 @@ class Thermostat:
       return data
     return None
   
+  def set_location(self, location) -> bool:
+    return self.device.login() and self.device.set_away(location)
