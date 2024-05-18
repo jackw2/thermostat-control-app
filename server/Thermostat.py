@@ -13,9 +13,9 @@ class Thermostat:
       cls._instance = super().__new__(cls, *args, **kwargs)
       cls._instance._initialize()
     return cls._instance
+  
   def _initialize(self):
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    self.log_file = open(os.path.join(current_dir, "log.txt"), "a")
     with open(os.path.join(current_dir, "config.json"), "r") as file:
       config = json.load(file)
       self.device_info = config['device_info']

@@ -2,5 +2,6 @@
   "device_info": {
     "ip_address": "172.20.3.221",
     "timeout": 5
-  }
+  },
+  "secret": "myCoolThermostat2024"
 }
