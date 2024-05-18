@@ -1,6 +1,9 @@
+# Author: Jack Wesolowski
+# https://github.com/jackw2/thermostat-control-app
+# Thermostat.py
 from venstarcolortouch import VenstarColorTouch
 import json
-
+import os
 
 class Thermostat:
   _instance = None
@@ -10,10 +13,10 @@ class Thermostat:
       cls._instance = super().__new__(cls, *args, **kwargs)
       cls._instance._initialize()
     return cls._instance
-
   def _initialize(self):
-    self.log_file = open("log.txt", "a")
-    with open("config.json", "r") as file:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    self.log_file = open(os.path.join(current_dir, "log.txt"), "a")
+    with open(os.path.join(current_dir, "config.json"), "r") as file:
       config = json.load(file)
       self.device_info = config['device_info']
     self.device = VenstarColorTouch(
@@ -31,8 +34,7 @@ class Thermostat:
       return False
 
   def get_data(self) -> dict:
-    # Add your code here to fetch and return the thermostat data
-    if self.device.update_info() is True:
+    if self.login() and self.device.update_info() is True:
       data = {
           "state": self.device.get_info("state"),
           "away": self.device.get_info("away"),
@@ -42,3 +44,4 @@ class Thermostat:
       }
       return data
     return None
+  

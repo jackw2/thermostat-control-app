@@ -4,7 +4,11 @@ This project is an iOS app and fastapi server to enable your Venstar Colortouch 
 
 ## Setup
 
-`pip install venstarcolortouch`
+```
+git clone https://github.com/jackw2/thermostat-control-app.git
+pip install venstarcolortouch
+pip install fastapi
+```
 
 To enable your thermostat to network access, enable wifi access at `Settings > Wifi > Local API. Verify you can access the thermostat via it's ip address:
 
