@@ -12,15 +12,16 @@ pip install fastapi
 
 To enable your thermostat to network access, enable wifi access at `Settings > Wifi > Local API. Verify you can access the thermostat via it's ip address:
 
-`curl 172.20.3.221` 
+```
+curl $thermostat_ip_address
+{"api_ver":9,"type":"residential","model":"COLORTOUCH","firmware":"6.93"}
+```
 
-You should see a similar response:
+Configure `config.json```, then start the sever:
 
-`{"api_ver":9,"type":"residential","model":"COLORTOUCH","firmware":"6.93"}`
-
-Start the sever:
-
-`fastapi dev main.py`
+```
+fastapi dev main.py
+```
 
 Set up [telebit.cloud](https://telebit.cloud/) to make your server availible to the internet (you can use a static ip if you prefer).
 
