@@ -109,3 +109,13 @@ async def set_fan(
     return {"message": "Fan mode set successfully"}
   else:
     raise HTTPException(status_code=500)
+
+@app.get("/device_status")
+async def get_data(Authorization: str = Header()):
+  if not is_authorized(Authorization):
+    raise HTTPException(status_code=401, detail="Unauthorized")
+
+  if thermostat.get_data():
+    return thermostat.get_data()
+  else:
+    raise HTTPException(status_code=500)
