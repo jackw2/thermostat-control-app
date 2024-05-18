@@ -55,3 +55,6 @@ class Thermostat:
   
   def set_mode(self, mode) -> bool:
     return self.device.login() and self.device.set_mode(mode)
+  
+  def set_fan(self, fan) -> bool:
+    return self.device.login() and self.device.set_fan(fan)
