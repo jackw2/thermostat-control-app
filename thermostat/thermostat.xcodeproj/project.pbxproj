@@ -16,6 +16,7 @@
 		0463F5AF2BF9B38F0045CB83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F5AE2BF9B38F0045CB83 /* ContentView.swift */; };
 		0463F5B12BF9B3900045CB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5B02BF9B3900045CB83 /* Assets.xcassets */; };
 		0463F5B42BF9B3910045CB83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */; };
+		049DDABB2BF9D20B002C3A55 /* SetpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABA2BF9D20B002C3A55 /* SetpointView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0463F5AE2BF9B38F0045CB83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0463F5B02BF9B3900045CB83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		049DDABA2BF9D20B002C3A55 /* SetpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetpointView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */,
 				0463F59C2BF9B38D0045CB83 /* ContentView.swift */,
+				049DDABA2BF9D20B002C3A55 /* SetpointView.swift */,
 				0463F59E2BF9B38F0045CB83 /* Assets.xcassets */,
 				0463F5A02BF9B38F0045CB83 /* Preview Content */,
 			);
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0463F59D2BF9B38D0045CB83 /* ContentView.swift in Sources */,
+				049DDABB2BF9D20B002C3A55 /* SetpointView.swift in Sources */,
 				0463F59B2BF9B38D0045CB83 /* thermostatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
