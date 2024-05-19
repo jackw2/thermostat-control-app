@@ -2,6 +2,12 @@
 
 This project is an iOS app and server built with fastapi to enable your Venstar Colortouch thermostat to automatically reduce it's heating/cooling when you are away from home based on the location services of your iPhone.
 
+## Status
+
+- Backend: Python + FastAPI ✅ Complete
+- iPhone App ⚠️ In Progress
+- Apple Watch App ⚠️ In Progress
+
 ## Setup
 
 ```
