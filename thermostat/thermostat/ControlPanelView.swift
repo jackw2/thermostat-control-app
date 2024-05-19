@@ -24,7 +24,8 @@ struct ControlPanelView: View {
                 StepperView(setpoint: $coolSetpoint, gradientColors: [.bunny, .wind])
             }
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.appBackground)
     }
 }
 
