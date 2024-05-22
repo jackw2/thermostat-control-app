@@ -16,10 +16,12 @@
 		0463F5AF2BF9B38F0045CB83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F5AE2BF9B38F0045CB83 /* ContentView.swift */; };
 		0463F5B12BF9B3900045CB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5B02BF9B3900045CB83 /* Assets.xcassets */; };
 		0463F5B42BF9B3910045CB83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */; };
-		049DDABB2BF9D20B002C3A55 /* SetpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABA2BF9D20B002C3A55 /* SetpointView.swift */; };
+		049DDABB2BF9D20B002C3A55 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABA2BF9D20B002C3A55 /* StepperView.swift */; };
 		049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */; };
 		049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */; };
 		049DDAC12BF9EB14002C3A55 /* MapPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */; };
+		04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */; };
+		04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +59,12 @@
 		0463F5AE2BF9B38F0045CB83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0463F5B02BF9B3900045CB83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		049DDABA2BF9D20B002C3A55 /* SetpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetpointView.swift; sourceTree = "<group>"; };
+		049DDABA2BF9D20B002C3A55 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 		049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
 		049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanelView.swift; sourceTree = "<group>"; };
 		049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPanelView.swift; sourceTree = "<group>"; };
+		04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
+		04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +106,10 @@
 		0463F5992BF9B38D0045CB83 /* thermostat */ = {
 			isa = PBXGroup;
 			children = (
+				0490BF1E2BFD9FE700074959 /* Views */,
 				0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */,
-				0463F59C2BF9B38D0045CB83 /* ContentView.swift */,
-				049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */,
-				049DDABA2BF9D20B002C3A55 /* SetpointView.swift */,
-				049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */,
-				049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */,
+				04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */,
+				04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */,
 				0463F59E2BF9B38F0045CB83 /* Assets.xcassets */,
 				0463F5A02BF9B38F0045CB83 /* Preview Content */,
 			);
@@ -139,6 +141,18 @@
 				0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0490BF1E2BFD9FE700074959 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */,
+				0463F59C2BF9B38D0045CB83 /* ContentView.swift */,
+				049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */,
+				049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */,
+				049DDABA2BF9D20B002C3A55 /* StepperView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +260,9 @@
 				0463F59D2BF9B38D0045CB83 /* ContentView.swift in Sources */,
 				049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */,
 				049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */,
-				049DDABB2BF9D20B002C3A55 /* SetpointView.swift in Sources */,
+				04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */,
+				049DDABB2BF9D20B002C3A55 /* StepperView.swift in Sources */,
+				04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */,
 				049DDAC12BF9EB14002C3A55 /* MapPanelView.swift in Sources */,
 				0463F59B2BF9B38D0045CB83 /* thermostatApp.swift in Sources */,
 			);
