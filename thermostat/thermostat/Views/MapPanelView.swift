@@ -7,44 +7,33 @@
 
 import MapKit
 import SwiftUI
+import CoreLocation
 
 struct MapPanelView: View {
-    @State private var address: String = ""
+    @State private var homeAddress = CLLocationCoordinate2D(latitude: 39.947039, longitude: -82.980115)
+    @State private var locationManager = CLLocationManager()
     
     var body: some View {
         VStack {
-            TextField("Enter your home address", text: $address)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
             Map {
-                Marker("Home", coordinate: CLLocationCoordinate2D(latitude: 40.7063, longitude: -74.1973))
-//                let cir = MKCircle(center: CLLocationCoordinate2D(latitude: 40.7063, longitude: -74.1973), radius: 1000               )
-//                addOverlay(cir)
+                Marker("Home", coordinate: homeAddress)
+                    .tint(.blue)
+                MapCircle(center: homeAddress, radius: 1000)
+                    .stroke(.blue.opacity(0.5), lineWidth: 5)
+                    .foregroundStyle(.white.opacity(0.2))
+                    .mapOverlayLevel(level: .aboveLabels)
+                
+            }
+            .mapControls {
+                MapUserLocationButton()
             }
             .mapControlVisibility(.hidden)
+            .mapStyle(.standard(elevation: .flat, emphasis: .muted, pointsOfInterest: .excludingAll, showsTraffic: false))
         }
-        //        .onAppear {
-        //            getCoordinate(for: address)
-        //        }
+        .onAppear {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
-    
-    //    private func getCoordinate(for address: String) {
-    //        let geocoder = CLGeocoder()
-    //        geocoder.geocodeAddressString(address) { (placemarks, error) in
-    //            if let error = error {
-    //                print("Geocoding error: \(error.localizedDescription)")
-    //            }
-    //
-    //            if let placemark = placemarks?.first {
-    //                let coordinate = placemark.location?.coordinate
-    //                if let coordinate = coordinate {
-    //                    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    //                    region = MKCoordinateRegion(center: coordinate, span: span)
-    //                }
-    //            }
-    //        }
-    //    }
 }
 
 #Preview {
