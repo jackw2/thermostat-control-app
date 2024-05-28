@@ -22,6 +22,8 @@
 		049DDAC12BF9EB14002C3A55 /* MapPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */; };
 		04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */; };
 		04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */; };
+		04F9A9D52BFDAA0D000F855B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */; };
+		04F9A9D82BFDAD8E000F855B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04F9A9D72BFDAD8E000F855B /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPanelView.swift; sourceTree = "<group>"; };
 		04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
 		04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatEnums.swift; sourceTree = "<group>"; };
+		04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F9A9D82BFDAD8E000F855B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,7 @@
 				0490BF1E2BFD9FE700074959 /* Views */,
 				0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */,
 				04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */,
+				04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */,
 				04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */,
 				0463F59E2BF9B38F0045CB83 /* Assets.xcassets */,
 				0463F5A02BF9B38F0045CB83 /* Preview Content */,
@@ -173,6 +178,9 @@
 				0463F5AA2BF9B38F0045CB83 /* PBXTargetDependency */,
 			);
 			name = thermostat;
+			packageProductDependencies = (
+				04F9A9D72BFDAD8E000F855B /* Alamofire */,
+			);
 			productName = thermostat;
 			productReference = 0463F5972BF9B38D0045CB83 /* thermostat.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +229,9 @@
 				Base,
 			);
 			mainGroup = 0463F58E2BF9B38C0045CB83;
+			packageReferences = (
+				04F9A9D62BFDAD8E000F855B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0463F5982BF9B38D0045CB83 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F9A9D52BFDAA0D000F855B /* NetworkManager.swift in Sources */,
 				0463F59D2BF9B38D0045CB83 /* ContentView.swift in Sources */,
 				049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */,
 				049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */,
@@ -476,6 +488,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
+				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -510,6 +523,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
+				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,6 +577,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04F9A9D62BFDAD8E000F855B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04F9A9D72BFDAD8E000F855B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04F9A9D62BFDAD8E000F855B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0463F58F2BF9B38C0045CB83 /* Project object */;
 }
