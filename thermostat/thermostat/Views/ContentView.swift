@@ -21,13 +21,13 @@ struct ContentView: View {
               Text("Thermostat")
             }
             .tag(1)
-          Text("Tab Content 2")
+          MapPanelView()
             .tabItem {
               Image(systemName: "map")
               Text("Map")
             }
             .tag(2)
-          Text("Tab Content 3")
+          SettingsPanelView()
             .tabItem {
               Image(systemName: "gearshape")
               Text("Settings")
