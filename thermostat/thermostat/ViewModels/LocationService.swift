@@ -48,7 +48,6 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
 
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         completions = completer.results.map { completion in
-            // Get the private _mapItem property
             let mapItem = completion.value(forKey: "_mapItem") as? MKMapItem
             
             return .init(
