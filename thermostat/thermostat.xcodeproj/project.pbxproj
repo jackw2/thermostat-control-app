@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0452459B2C0D4CAB00DE4C03 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452459A2C0D4CAB00DE4C03 /* SearchResultsView.swift */; };
 		0463F59B2BF9B38D0045CB83 /* thermostatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */; };
-		0463F59D2BF9B38D0045CB83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F59C2BF9B38D0045CB83 /* ContentView.swift */; };
+		0463F59D2BF9B38D0045CB83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F59C2BF9B38D0045CB83 /* HomeView.swift */; };
 		0463F59F2BF9B38F0045CB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F59E2BF9B38F0045CB83 /* Assets.xcassets */; };
 		0463F5A22BF9B38F0045CB83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5A12BF9B38F0045CB83 /* Preview Assets.xcassets */; };
 		0463F5A82BF9B38F0045CB83 /* thermostat Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0463F5A72BF9B38F0045CB83 /* thermostat Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -19,7 +20,9 @@
 		049DDABB2BF9D20B002C3A55 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABA2BF9D20B002C3A55 /* StepperView.swift */; };
 		049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */; };
 		049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */; };
-		049DDAC12BF9EB14002C3A55 /* MapPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */; };
+		049DDAC12BF9EB14002C3A55 /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDAC02BF9EB14002C3A55 /* AddressSearchView.swift */; };
+		04C3B64A2C0D4F1F001BC95A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B6492C0D4F1F001BC95A /* LocationService.swift */; };
+		04C3B64C2C0D7941001BC95A /* MapOverwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B64B2C0D7941001BC95A /* MapOverwatchView.swift */; };
 		04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */; };
 		04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */; };
 		04F9A9D52BFDAA0D000F855B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */; };
@@ -51,9 +54,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0452459A2C0D4CAB00DE4C03 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		0463F5972BF9B38D0045CB83 /* thermostat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermostat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermostatApp.swift; sourceTree = "<group>"; };
-		0463F59C2BF9B38D0045CB83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0463F59C2BF9B38D0045CB83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0463F59E2BF9B38F0045CB83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0463F5A12BF9B38F0045CB83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0463F5A72BF9B38F0045CB83 /* thermostat Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "thermostat Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +68,9 @@
 		049DDABA2BF9D20B002C3A55 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 		049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
 		049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanelView.swift; sourceTree = "<group>"; };
-		049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPanelView.swift; sourceTree = "<group>"; };
+		049DDAC02BF9EB14002C3A55 /* AddressSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchView.swift; sourceTree = "<group>"; };
+		04C3B6492C0D4F1F001BC95A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		04C3B64B2C0D7941001BC95A /* MapOverwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverwatchView.swift; sourceTree = "<group>"; };
 		04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
 		04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatEnums.swift; sourceTree = "<group>"; };
 		04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -89,6 +95,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045245972C0D4A2E00DE4C03 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */,
+				04C3B6492C0D4F1F001BC95A /* LocationService.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0452459C2C0D4DD100DE4C03 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0452459A2C0D4CAB00DE4C03 /* SearchResultsView.swift */,
+				049DDABA2BF9D20B002C3A55 /* StepperView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0452459D2C0D4E1800DE4C03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0463F58E2BF9B38C0045CB83 = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				0490BF1E2BFD9FE700074959 /* Views */,
+				045245972C0D4A2E00DE4C03 /* ViewModels */,
+				0452459D2C0D4E1800DE4C03 /* Models */,
 				0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */,
-				04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */,
-				04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */,
 				04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */,
 				0463F59E2BF9B38F0045CB83 /* Assets.xcassets */,
 				0463F5A02BF9B38F0045CB83 /* Preview Content */,
@@ -151,11 +183,12 @@
 		0490BF1E2BFD9FE700074959 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */,
-				0463F59C2BF9B38D0045CB83 /* ContentView.swift */,
+				0452459C2C0D4DD100DE4C03 /* Components */,
+				0463F59C2BF9B38D0045CB83 /* HomeView.swift */,
 				049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */,
-				049DDAC02BF9EB14002C3A55 /* MapPanelView.swift */,
-				049DDABA2BF9D20B002C3A55 /* StepperView.swift */,
+				049DDAC02BF9EB14002C3A55 /* AddressSearchView.swift */,
+				04C3B64B2C0D7941001BC95A /* MapOverwatchView.swift */,
+				049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,13 +302,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F9A9D52BFDAA0D000F855B /* NetworkManager.swift in Sources */,
-				0463F59D2BF9B38D0045CB83 /* ContentView.swift in Sources */,
+				0463F59D2BF9B38D0045CB83 /* HomeView.swift in Sources */,
+				0452459B2C0D4CAB00DE4C03 /* SearchResultsView.swift in Sources */,
 				049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */,
 				049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */,
+				04C3B64C2C0D7941001BC95A /* MapOverwatchView.swift in Sources */,
 				04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */,
+				04C3B64A2C0D4F1F001BC95A /* LocationService.swift in Sources */,
 				049DDABB2BF9D20B002C3A55 /* StepperView.swift in Sources */,
 				04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */,
-				049DDAC12BF9EB14002C3A55 /* MapPanelView.swift in Sources */,
+				049DDAC12BF9EB14002C3A55 /* AddressSearchView.swift in Sources */,
 				0463F59B2BF9B38D0045CB83 /* thermostatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +524,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
-				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable your thermostat as you approach your home.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -523,7 +559,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
-				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable your thermostat as you approach your home.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
