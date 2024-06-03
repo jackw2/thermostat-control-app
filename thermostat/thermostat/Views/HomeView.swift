@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct HomeView: View {
     @State private var currentTemp: Double = 72.0
     @State private var heatSetpoint = 70
     @State private var coolSetpoint = 80
     @State private var count = 0
-
+    private var locationManager = CLLocationManager()
+    
     var body: some View {
         TabView {
           ControlPanelView()
@@ -20,19 +22,19 @@ struct HomeView: View {
               Image(systemName: "thermometer")
               Text("Thermostat")
             }
-            .tag(1)
-          Text("Hi")
+            MapOverwatchView()
             .tabItem {
               Image(systemName: "map")
               Text("Map")
             }
-            .tag(2)
           SettingsPanelView()
             .tabItem {
               Image(systemName: "gearshape")
               Text("Settings")
             }
-            .tag(3)
+        }
+        .onAppear() {
+            locationManager.requestAlwaysAuthorization()
         }
     }
 }
