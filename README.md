@@ -2,13 +2,7 @@
 
 This project is an iOS app and server built with fastapi to enable your Venstar Colortouch thermostat to automatically reduce it's heating/cooling when you are away from home based on the location services of your iPhone.
 
-## Status
-
-- Backend: Python + FastAPI ✅ Complete
-- iPhone App ⚠️ In Progress
-- Apple Watch App ⚠️ In Progress
-
-## Setup
+## Server Setup
 
 ```
 git clone https://github.com/jackw2/thermostat-control-app.git
@@ -35,3 +29,5 @@ Set up [telebit.cloud](https://telebit.cloud/) to make your server availible to 
 curl https://get.telebit.io/ | bash
 ~/telebit http 8000
 ```
+
+On the iPhone app in the settings tab, configure the url and secret to match that of your server configuration. Search for your home address and configure the radius to your preferred distance.
