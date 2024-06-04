@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ConnectionIndicatorView: View {
-    @State private var isConnected = true
+    @Binding var isConnected: Bool
     
     var body: some View {
         HStack(spacing: 10) {
@@ -31,5 +31,11 @@ struct ConnectionIndicatorView: View {
 }
 
 #Preview {
-    ConnectionIndicatorView()
-}
+    struct PreviewWrapper: View {
+        @State private var isConnected = true
+        
+        var body: some View {
+            ConnectionIndicatorView(isConnected: $isConnected)
+        }
+    }
+    return PreviewWrapper()}

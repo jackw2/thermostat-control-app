@@ -16,6 +16,7 @@ struct AddressSearchView: View {
     @State private var isSheetPresented: Bool = true
     @State private var scene: MKLookAroundScene?
     @State private var didSetAddress = false
+    @Environment(SettingsModel.self) private var settingsModel
     
     var body: some View {
         Map(position: $position, selection: $selectedLocation) {
@@ -36,10 +37,9 @@ struct AddressSearchView: View {
                 }
                 if let selectedLocation = selectedLocation {
                     Button(action: {
-                        UserDefaults.standard.set(selectedLocation.title, forKey: "homeTitle")
-                        UserDefaults.standard.set(selectedLocation.location.latitude, forKey: "homeLatitude")
-                        UserDefaults.standard.set(selectedLocation.location.longitude, forKey: "homeLongitude")
-                        didSetAddress = true
+                        settingsModel.homeTitle = selectedLocation.title
+                        settingsModel.homeLatitude = selectedLocation.location.latitude
+                        settingsModel.homeLatitude = selectedLocation.location.longitude
                     }) {
                         Text("Save as Home Address")
                             .foregroundColor(.white)
@@ -82,8 +82,10 @@ struct AddressSearchView: View {
 
 #Preview {
     struct PreviewWrapper: View {
+        @State private var settingsModel = SettingsModel.standard
         var body: some View {
             AddressSearchView()
+                .environment(settingsModel)
         }
     }
     return PreviewWrapper()

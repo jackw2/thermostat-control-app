@@ -14,15 +14,15 @@ struct ControlPanelView: View {
     @State private var count = 0
     @State private var isConnected = true
     
-    @Environment(Model.self) private var model
+    @Environment(SettingsModel.self) private var settingsModel
     @State private var thermostatModel = ThermostatModel.standard
     
     var body: some View {
         VStack() {
-            ConnectionIndicatorView()
+            ConnectionIndicatorView(isConnected: $isConnected)
             Group {
                 VStack {
-                    Text(model.settings.homeTitle)
+                    Text(settingsModel.homeTitle)
                         .frame(alignment: .top)
                         .lineLimit(1)
                         .font(.system(size: 24, weight: .medium))
@@ -47,11 +47,11 @@ struct ControlPanelView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var model = Model()
+        @State private var settingsModel = SettingsModel.standard
         
         var body: some View {
             ControlPanelView()
-                .environment(model)
+                .environment(settingsModel)
         }
     }
     return PreviewWrapper()

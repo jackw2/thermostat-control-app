@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct SettingsPanelView: View {
-    @Environment(Model.self) private var model
+    @Environment(SettingsModel.self) private var settingsModel
     
     var body: some View {
         NavigationStack () {
             Form {
                 Section("Server Connection") {
                     TextField("Server URL", text: Binding<String>(
-                        get: {model.settings.serverURL},
-                        set: {model.settings.serverURL = $0}))
+                        get: {settingsModel.serverURL},
+                        set: {settingsModel.serverURL = $0}))
                     SecureField("Authentication Secret", text: Binding<String>(
-                        get: {model.settings.authSecret},
-                        set: {model.settings.authSecret = $0}))
+                        get: {settingsModel.authSecret},
+                        set: {settingsModel.authSecret = $0}))
                 }
                 
                 Section("Home Address") {
                     TextField("Home Title", text: Binding<String>(
-                        get: {model.settings.homeTitle},
-                        set: {model.settings.homeTitle = $0}))
+                        get: {settingsModel.homeTitle},
+                        set: {settingsModel.homeTitle = $0}))
                     
-                    Text("Latitude: \(String(format: "%.6f", model.settings.homeLatitude))")
-                    Text("Latitude: \(String(format: "%.6f", model.settings.homeLongitude))")
+                    Text("Latitude: \(String(format: "%.6f", settingsModel.homeLatitude))")
+                    Text("Latitude: \(String(format: "%.6f", settingsModel.homeLongitude))")
                     NavigationLink("Set Home Address", value: "address")
                         .navigationDestination(for: String.self) { _ in
                             AddressSearchView()
@@ -44,11 +44,11 @@ struct SettingsPanelView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var model = Model()
+        @State private var settingsModel = SettingsModel.standard
         
         var body: some View {
             SettingsPanelView()
-                .environment(model)
+                .environment(settingsModel)
         }
     }
     return PreviewWrapper()

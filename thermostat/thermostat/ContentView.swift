@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct ContentView: View {
-    @State private var model = Model()
+    @State private var settingsModel = SettingsModel.standard
     private var locationManager = CLLocationManager()
     
     var body: some View {
@@ -33,7 +33,7 @@ struct ContentView: View {
                     Text("Settings")
                 }
         }
-        .environment(model)
+        .environment(settingsModel)
         .onAppear() {
             locationManager.requestAlwaysAuthorization()
         }
