@@ -39,7 +39,7 @@ struct AddressSearchView: View {
                     Button(action: {
                         settingsModel.homeTitle = selectedLocation.title
                         settingsModel.homeLatitude = selectedLocation.location.latitude
-                        settingsModel.homeLatitude = selectedLocation.location.longitude
+                        settingsModel.homeLongitude = selectedLocation.location.longitude
                     }) {
                         Text("Save as Home Address")
                             .foregroundColor(.white)

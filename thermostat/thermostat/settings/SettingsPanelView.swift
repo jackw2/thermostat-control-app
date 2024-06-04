@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsPanelView: View {
     @Environment(SettingsModel.self) private var settingsModel
-    
+    @State var a = 1
     var body: some View {
         NavigationStack () {
             Form {
@@ -28,7 +28,7 @@ struct SettingsPanelView: View {
                         set: {settingsModel.homeTitle = $0}))
                     
                     Text("Latitude: \(String(format: "%.6f", settingsModel.homeLatitude))")
-                    Text("Latitude: \(String(format: "%.6f", settingsModel.homeLongitude))")
+                    Text("Longitude: \(String(format: "%.6f", settingsModel.homeLongitude))")
                     NavigationLink("Set Home Address", value: "address")
                         .navigationDestination(for: String.self) { _ in
                             AddressSearchView()

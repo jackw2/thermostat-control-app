@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Observation
 
 @Observable
 class SettingsModel {
@@ -14,37 +15,45 @@ class SettingsModel {
     
     private let ud = UserDefaults.standard
     
-    var banana = ""
-    
     var serverURL: String {
         get {
+            self.access(keyPath: \.serverURL)
             return ud.string(forKey: "serverURL") ?? ""
         }
         set {
-            ud.set(newValue, forKey: "serverURL")
+            self.withMutation(keyPath: \.serverURL) {
+                ud.set(newValue, forKey: "serverURL")
+            }
         }
     }
     
     var authSecret: String {
         get {
-            ud.string(forKey: "authSecret") ?? ""
+            self.access(keyPath: \.authSecret)
+            return ud.string(forKey: "authSecret") ?? ""
         }
         set {
-            ud.set(newValue, forKey: "authSecret")
+            self.withMutation(keyPath: \.authSecret) {
+                ud.set(newValue, forKey: "authSecret")
+            }
         }
     }
     
     var homeTitle: String {
         get {
-            ud.string(forKey: "homeTitle") ?? "The White House"
+            self.access(keyPath: \.homeTitle)
+            return ud.string(forKey: "homeTitle") ?? "The White House"
         }
         set {
-            ud.set(newValue, forKey: "homeTitle")
+            self.withMutation(keyPath: \.homeTitle) {
+                ud.set(newValue, forKey: "homeTitle")
+            }
         }
     }
     
     var homeLatitude: Double {
         get {
+            self.access(keyPath: \.homeLatitude)
             if let lat = ud.object(forKey: "homeLatitude") as? Double {
                 return lat
             } else {
@@ -52,12 +61,15 @@ class SettingsModel {
             }
         }
         set {
-            ud.set(newValue, forKey: "homeLatitude")
+            self.withMutation(keyPath: \.homeLatitude) {
+                ud.set(newValue, forKey: "homeLatitude")
+            }
         }
     }
     
     var homeLongitude: Double {
         get {
+            self.access(keyPath: \.homeLongitude)
             if let long = ud.object(forKey: "homeLongitude") as? Double {
                 return long
             } else {
@@ -65,7 +77,9 @@ class SettingsModel {
             }
         }
         set {
-            ud.set(newValue, forKey: "homeLongitude")
+            self.withMutation(keyPath: \.homeLongitude) {
+                ud.set(newValue, forKey: "homeLongitude")
+            }
         }
     }
 }
