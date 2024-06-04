@@ -81,5 +81,10 @@ struct AddressSearchView: View {
 
 
 #Preview {
-    AddressSearchView()
+    struct PreviewWrapper: View {
+        var body: some View {
+            AddressSearchView()
+        }
+    }
+    return PreviewWrapper()
 }

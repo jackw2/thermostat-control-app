@@ -7,33 +7,28 @@
 
 import Foundation
 
-
-
-let AWAY_HOME: AwayMode = .home
-
+@Observable
 class ThermostatModel {
-    private var statusInfo: [String: Any?] = [
+    static let standard = ThermostatModel()
+    private init() {}
+    
+    var statusInfo: [String: Any?] = [
         "state": nil,
         "away": nil,
         "spacetemp": nil,
         "heattemp": nil,
         "cooltemp": nil,
     ]
+//    var currentTemp: Double = 72.0
+//    var heatSetpoint = 70
+//    var coolSetpoint = 80
+//    var count = 0
+//    var isConnected = true
+    
     
     var location = AwayMode.home
     var setpointHeatTo = 70
     var setpointCoolTo = 80
     var mode = Mode.auto
     var fan = Fan.auto
-    
-    
-    static let shared: ThermostatModel = {
-        let instance = ThermostatModel()
-        
-        return instance
-    }()
-    
-    private init() {
-        // Private initializer to prevent multiple instances of singleton
-    }
 }

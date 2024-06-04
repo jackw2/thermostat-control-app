@@ -42,7 +42,6 @@ struct StepperView: View {
         .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .bottom, endPoint: .top))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .foregroundStyle(foregroundColor)
-        .padding()
     }
 }
 

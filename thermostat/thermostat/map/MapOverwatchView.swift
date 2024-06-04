@@ -16,7 +16,6 @@ struct MapOverwatchView: View {
     @AppStorage("homeLongitude") private var homeLongitude: Double = -77.036560
     @State private var homeAddress:CLLocationCoordinate2D? = nil
     
-    
     var body: some View {
         Map(position: $cameraPosition) {
             UserAnnotation()
