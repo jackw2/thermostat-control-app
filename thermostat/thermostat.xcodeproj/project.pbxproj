@@ -7,46 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0452459B2C0D4CAB00DE4C03 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452459A2C0D4CAB00DE4C03 /* SearchResultsView.swift */; };
-		0463F59B2BF9B38D0045CB83 /* thermostatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */; };
-		0463F59D2BF9B38D0045CB83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F59C2BF9B38D0045CB83 /* HomeView.swift */; };
-		0463F59F2BF9B38F0045CB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F59E2BF9B38F0045CB83 /* Assets.xcassets */; };
-		0463F5A22BF9B38F0045CB83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5A12BF9B38F0045CB83 /* Preview Assets.xcassets */; };
-		0463F5A82BF9B38F0045CB83 /* thermostat Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0463F5A72BF9B38F0045CB83 /* thermostat Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0463F5AD2BF9B38F0045CB83 /* thermostatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F5AC2BF9B38F0045CB83 /* thermostatApp.swift */; };
-		0463F5AF2BF9B38F0045CB83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F5AE2BF9B38F0045CB83 /* ContentView.swift */; };
-		0463F5B12BF9B3900045CB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5B02BF9B3900045CB83 /* Assets.xcassets */; };
-		0463F5B42BF9B3910045CB83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */; };
-		049DDABB2BF9D20B002C3A55 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABA2BF9D20B002C3A55 /* StepperView.swift */; };
-		049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */; };
-		049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */; };
-		049DDAC12BF9EB14002C3A55 /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DDAC02BF9EB14002C3A55 /* AddressSearchView.swift */; };
-		04C3B64A2C0D4F1F001BC95A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B6492C0D4F1F001BC95A /* LocationService.swift */; };
-		04C3B64C2C0D7941001BC95A /* MapOverwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B64B2C0D7941001BC95A /* MapOverwatchView.swift */; };
-		04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */; };
-		04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */; };
-		04F9A9D52BFDAA0D000F855B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */; };
-		04F9A9D82BFDAD8E000F855B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04F9A9D72BFDAD8E000F855B /* Alamofire */; };
+		040A97062C0E91E90033D05E /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A97052C0E91E90033D05E /* AddressSearchView.swift */; };
+		0422F7D42C0E957100E90FF3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7D32C0E957100E90FF3 /* LocationService.swift */; };
+		0422F7D62C0E95C500E90FF3 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7D52C0E95C500E90FF3 /* SearchResultsView.swift */; };
+		0422F7DA2C0E970300E90FF3 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7D92C0E970300E90FF3 /* StepperView.swift */; };
+		0422F7DC2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */; };
+		0422F7DE2C0EA8B900E90FF3 /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7DD2C0EA8B800E90FF3 /* ThermostatModel.swift */; };
+		0422F7E12C0EAAE000E90FF3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0422F7E02C0EAAE000E90FF3 /* Alamofire */; };
+		04A903692C0E753F008F0BF2 /* thermostatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903682C0E753F008F0BF2 /* thermostatApp.swift */; };
+		04A9036B2C0E753F008F0BF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9036A2C0E753F008F0BF2 /* ContentView.swift */; };
+		04A9036D2C0E7540008F0BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A9036C2C0E7540008F0BF2 /* Assets.xcassets */; };
+		04A903702C0E7540008F0BF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A9036F2C0E7540008F0BF2 /* Preview Assets.xcassets */; };
+		04A903762C0E7540008F0BF2 /* thermostat Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04A903752C0E7540008F0BF2 /* thermostat Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04A9037B2C0E7540008F0BF2 /* thermostatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9037A2C0E7540008F0BF2 /* thermostatApp.swift */; };
+		04A9037D2C0E7540008F0BF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9037C2C0E7540008F0BF2 /* ContentView.swift */; };
+		04A9037F2C0E7541008F0BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A9037E2C0E7541008F0BF2 /* Assets.xcassets */; };
+		04A903822C0E7541008F0BF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A903812C0E7541008F0BF2 /* Preview Assets.xcassets */; };
+		04A9038E2C0E77F6008F0BF2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9038D2C0E77F6008F0BF2 /* Model.swift */; };
+		04A903902C0E78CA008F0BF2 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9038F2C0E78CA008F0BF2 /* SettingsModel.swift */; };
+		04A903952C0E8381008F0BF2 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903942C0E8381008F0BF2 /* ControlPanelView.swift */; };
+		04A903972C0E83F5008F0BF2 /* MapOverwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */; };
+		04A903992C0E8417008F0BF2 /* SettingsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903982C0E8417008F0BF2 /* SettingsPanelView.swift */; };
+		04A9039C2C0E84B0008F0BF2 /* ThermostatEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0463F5A92BF9B38F0045CB83 /* PBXContainerItemProxy */ = {
+		04A903772C0E7540008F0BF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0463F58F2BF9B38C0045CB83 /* Project object */;
+			containerPortal = 04A9035D2C0E753E008F0BF2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0463F5A62BF9B38F0045CB83;
+			remoteGlobalIDString = 04A903742C0E7540008F0BF2;
 			remoteInfo = "thermostat Watch App";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0463F5BA2BF9B3910045CB83 /* Embed Watch Content */ = {
+		04A903882C0E7541008F0BF2 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				0463F5A82BF9B38F0045CB83 /* thermostat Watch App.app in Embed Watch Content */,
+				04A903762C0E7540008F0BF2 /* thermostat Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,38 +56,40 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0452459A2C0D4CAB00DE4C03 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
-		0463F5972BF9B38D0045CB83 /* thermostat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermostat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermostatApp.swift; sourceTree = "<group>"; };
-		0463F59C2BF9B38D0045CB83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		0463F59E2BF9B38F0045CB83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0463F5A12BF9B38F0045CB83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0463F5A72BF9B38F0045CB83 /* thermostat Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "thermostat Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0463F5AC2BF9B38F0045CB83 /* thermostatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermostatApp.swift; sourceTree = "<group>"; };
-		0463F5AE2BF9B38F0045CB83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0463F5B02BF9B3900045CB83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		049DDABA2BF9D20B002C3A55 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
-		049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
-		049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanelView.swift; sourceTree = "<group>"; };
-		049DDAC02BF9EB14002C3A55 /* AddressSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchView.swift; sourceTree = "<group>"; };
-		04C3B6492C0D4F1F001BC95A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		04C3B64B2C0D7941001BC95A /* MapOverwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverwatchView.swift; sourceTree = "<group>"; };
-		04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
-		04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatEnums.swift; sourceTree = "<group>"; };
-		04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		040A97052C0E91E90033D05E /* AddressSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressSearchView.swift; sourceTree = "<group>"; };
+		0422F7D32C0E957100E90FF3 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0422F7D52C0E95C500E90FF3 /* SearchResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
+		0422F7D92C0E970300E90FF3 /* StepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
+		0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionIndicatorView.swift; sourceTree = "<group>"; };
+		0422F7DD2C0EA8B800E90FF3 /* ThermostatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
+		04A903652C0E753F008F0BF2 /* thermostat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermostat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A903682C0E753F008F0BF2 /* thermostatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermostatApp.swift; sourceTree = "<group>"; };
+		04A9036A2C0E753F008F0BF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04A9036C2C0E7540008F0BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04A9036F2C0E7540008F0BF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04A903752C0E7540008F0BF2 /* thermostat Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "thermostat Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A9037A2C0E7540008F0BF2 /* thermostatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermostatApp.swift; sourceTree = "<group>"; };
+		04A9037C2C0E7540008F0BF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04A9037E2C0E7541008F0BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04A903812C0E7541008F0BF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04A9038D2C0E77F6008F0BF2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		04A9038F2C0E78CA008F0BF2 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		04A903942C0E8381008F0BF2 /* ControlPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
+		04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOverwatchView.swift; sourceTree = "<group>"; };
+		04A903982C0E8417008F0BF2 /* SettingsPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPanelView.swift; sourceTree = "<group>"; };
+		04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0463F5942BF9B38D0045CB83 /* Frameworks */ = {
+		04A903622C0E753F008F0BF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F9A9D82BFDAD8E000F855B /* Alamofire in Frameworks */,
+				0422F7E12C0EAAE000E90FF3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0463F5A42BF9B38F0045CB83 /* Frameworks */ = {
+		04A903722C0E7540008F0BF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -95,136 +99,138 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		045245972C0D4A2E00DE4C03 /* ViewModels */ = {
+		0422F7D22C0E94FA00E90FF3 /* search */ = {
 			isa = PBXGroup;
 			children = (
-				04F9A9D42BFDAA0D000F855B /* NetworkManager.swift */,
-				04C3B6492C0D4F1F001BC95A /* LocationService.swift */,
+				040A97052C0E91E90033D05E /* AddressSearchView.swift */,
+				0422F7D52C0E95C500E90FF3 /* SearchResultsView.swift */,
+				0422F7D32C0E957100E90FF3 /* LocationService.swift */,
 			);
-			path = ViewModels;
+			path = search;
 			sourceTree = "<group>";
 		};
-		0452459C2C0D4DD100DE4C03 /* Components */ = {
+		0422F7D72C0E966400E90FF3 /* control panel */ = {
 			isa = PBXGroup;
 			children = (
-				0452459A2C0D4CAB00DE4C03 /* SearchResultsView.swift */,
-				049DDABA2BF9D20B002C3A55 /* StepperView.swift */,
+				04A903942C0E8381008F0BF2 /* ControlPanelView.swift */,
+				0422F7DD2C0EA8B800E90FF3 /* ThermostatModel.swift */,
+				0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */,
+				0422F7D92C0E970300E90FF3 /* StepperView.swift */,
 			);
-			path = Components;
+			path = "control panel";
 			sourceTree = "<group>";
 		};
-		0452459D2C0D4E1800DE4C03 /* Models */ = {
+		0422F7D82C0E968000E90FF3 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				04F9A9D02BFDA25E000F855B /* ThermostatModel.swift */,
+				04A9038F2C0E78CA008F0BF2 /* SettingsModel.swift */,
+				04A903982C0E8417008F0BF2 /* SettingsPanelView.swift */,
 			);
-			path = Models;
+			path = settings;
 			sourceTree = "<group>";
 		};
-		0463F58E2BF9B38C0045CB83 = {
+		04A9035C2C0E753E008F0BF2 = {
 			isa = PBXGroup;
 			children = (
-				0463F5992BF9B38D0045CB83 /* thermostat */,
-				0463F5AB2BF9B38F0045CB83 /* thermostat Watch App */,
-				0463F5982BF9B38D0045CB83 /* Products */,
+				04A903672C0E753F008F0BF2 /* thermostat */,
+				04A903792C0E7540008F0BF2 /* thermostat Watch App */,
+				04A903662C0E753F008F0BF2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0463F5982BF9B38D0045CB83 /* Products */ = {
+		04A903662C0E753F008F0BF2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0463F5972BF9B38D0045CB83 /* thermostat.app */,
-				0463F5A72BF9B38F0045CB83 /* thermostat Watch App.app */,
+				04A903652C0E753F008F0BF2 /* thermostat.app */,
+				04A903752C0E7540008F0BF2 /* thermostat Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0463F5992BF9B38D0045CB83 /* thermostat */ = {
+		04A903672C0E753F008F0BF2 /* thermostat */ = {
 			isa = PBXGroup;
 			children = (
-				0490BF1E2BFD9FE700074959 /* Views */,
-				045245972C0D4A2E00DE4C03 /* ViewModels */,
-				0452459D2C0D4E1800DE4C03 /* Models */,
-				0463F59A2BF9B38D0045CB83 /* thermostatApp.swift */,
-				04F9A9D22BFDA5F1000F855B /* ThermostatEnums.swift */,
-				0463F59E2BF9B38F0045CB83 /* Assets.xcassets */,
-				0463F5A02BF9B38F0045CB83 /* Preview Content */,
+				0422F7D22C0E94FA00E90FF3 /* search */,
+				0422F7D72C0E966400E90FF3 /* control panel */,
+				04A903932C0E7A2D008F0BF2 /* map */,
+				0422F7D82C0E968000E90FF3 /* settings */,
+				04A903682C0E753F008F0BF2 /* thermostatApp.swift */,
+				04A9036A2C0E753F008F0BF2 /* ContentView.swift */,
+				04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */,
+				04A9038D2C0E77F6008F0BF2 /* Model.swift */,
+				04A9036C2C0E7540008F0BF2 /* Assets.xcassets */,
+				04A9036E2C0E7540008F0BF2 /* Preview Content */,
 			);
 			path = thermostat;
 			sourceTree = "<group>";
 		};
-		0463F5A02BF9B38F0045CB83 /* Preview Content */ = {
+		04A9036E2C0E7540008F0BF2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0463F5A12BF9B38F0045CB83 /* Preview Assets.xcassets */,
+				04A9036F2C0E7540008F0BF2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0463F5AB2BF9B38F0045CB83 /* thermostat Watch App */ = {
+		04A903792C0E7540008F0BF2 /* thermostat Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				0463F5AC2BF9B38F0045CB83 /* thermostatApp.swift */,
-				0463F5AE2BF9B38F0045CB83 /* ContentView.swift */,
-				0463F5B02BF9B3900045CB83 /* Assets.xcassets */,
-				0463F5B22BF9B3910045CB83 /* Preview Content */,
+				04A9037A2C0E7540008F0BF2 /* thermostatApp.swift */,
+				04A9037C2C0E7540008F0BF2 /* ContentView.swift */,
+				04A9037E2C0E7541008F0BF2 /* Assets.xcassets */,
+				04A903802C0E7541008F0BF2 /* Preview Content */,
 			);
 			path = "thermostat Watch App";
 			sourceTree = "<group>";
 		};
-		0463F5B22BF9B3910045CB83 /* Preview Content */ = {
+		04A903802C0E7541008F0BF2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0463F5B32BF9B3910045CB83 /* Preview Assets.xcassets */,
+				04A903812C0E7541008F0BF2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0490BF1E2BFD9FE700074959 /* Views */ = {
+		04A903932C0E7A2D008F0BF2 /* map */ = {
 			isa = PBXGroup;
 			children = (
-				0452459C2C0D4DD100DE4C03 /* Components */,
-				0463F59C2BF9B38D0045CB83 /* HomeView.swift */,
-				049DDABC2BF9E2C2002C3A55 /* ControlPanelView.swift */,
-				049DDAC02BF9EB14002C3A55 /* AddressSearchView.swift */,
-				04C3B64B2C0D7941001BC95A /* MapOverwatchView.swift */,
-				049DDABE2BF9EA1F002C3A55 /* SettingsPanelView.swift */,
+				04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */,
 			);
-			path = Views;
+			path = map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0463F5962BF9B38D0045CB83 /* thermostat */ = {
+		04A903642C0E753F008F0BF2 /* thermostat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0463F5BB2BF9B3910045CB83 /* Build configuration list for PBXNativeTarget "thermostat" */;
+			buildConfigurationList = 04A903892C0E7541008F0BF2 /* Build configuration list for PBXNativeTarget "thermostat" */;
 			buildPhases = (
-				0463F5932BF9B38D0045CB83 /* Sources */,
-				0463F5942BF9B38D0045CB83 /* Frameworks */,
-				0463F5952BF9B38D0045CB83 /* Resources */,
-				0463F5BA2BF9B3910045CB83 /* Embed Watch Content */,
+				04A903612C0E753F008F0BF2 /* Sources */,
+				04A903622C0E753F008F0BF2 /* Frameworks */,
+				04A903632C0E753F008F0BF2 /* Resources */,
+				04A903882C0E7541008F0BF2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0463F5AA2BF9B38F0045CB83 /* PBXTargetDependency */,
+				04A903782C0E7540008F0BF2 /* PBXTargetDependency */,
 			);
 			name = thermostat;
 			packageProductDependencies = (
-				04F9A9D72BFDAD8E000F855B /* Alamofire */,
+				0422F7E02C0EAAE000E90FF3 /* Alamofire */,
 			);
 			productName = thermostat;
-			productReference = 0463F5972BF9B38D0045CB83 /* thermostat.app */;
+			productReference = 04A903652C0E753F008F0BF2 /* thermostat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0463F5A62BF9B38F0045CB83 /* thermostat Watch App */ = {
+		04A903742C0E7540008F0BF2 /* thermostat Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0463F5B72BF9B3910045CB83 /* Build configuration list for PBXNativeTarget "thermostat Watch App" */;
+			buildConfigurationList = 04A903852C0E7541008F0BF2 /* Build configuration list for PBXNativeTarget "thermostat Watch App" */;
 			buildPhases = (
-				0463F5A32BF9B38F0045CB83 /* Sources */,
-				0463F5A42BF9B38F0045CB83 /* Frameworks */,
-				0463F5A52BF9B38F0045CB83 /* Resources */,
+				04A903712C0E7540008F0BF2 /* Sources */,
+				04A903722C0E7540008F0BF2 /* Frameworks */,
+				04A903732C0E7540008F0BF2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -232,28 +238,28 @@
 			);
 			name = "thermostat Watch App";
 			productName = "thermostat Watch App";
-			productReference = 0463F5A72BF9B38F0045CB83 /* thermostat Watch App.app */;
+			productReference = 04A903752C0E7540008F0BF2 /* thermostat Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0463F58F2BF9B38C0045CB83 /* Project object */ = {
+		04A9035D2C0E753E008F0BF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					0463F5962BF9B38D0045CB83 = {
+					04A903642C0E753F008F0BF2 = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					0463F5A62BF9B38F0045CB83 = {
+					04A903742C0E7540008F0BF2 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = 0463F5922BF9B38C0045CB83 /* Build configuration list for PBXProject "thermostat" */;
+			buildConfigurationList = 04A903602C0E753E008F0BF2 /* Build configuration list for PBXProject "thermostat" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -261,82 +267,84 @@
 				en,
 				Base,
 			);
-			mainGroup = 0463F58E2BF9B38C0045CB83;
+			mainGroup = 04A9035C2C0E753E008F0BF2;
 			packageReferences = (
-				04F9A9D62BFDAD8E000F855B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0422F7DF2C0EAAE000E90FF3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
-			productRefGroup = 0463F5982BF9B38D0045CB83 /* Products */;
+			productRefGroup = 04A903662C0E753F008F0BF2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0463F5962BF9B38D0045CB83 /* thermostat */,
-				0463F5A62BF9B38F0045CB83 /* thermostat Watch App */,
+				04A903642C0E753F008F0BF2 /* thermostat */,
+				04A903742C0E7540008F0BF2 /* thermostat Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0463F5952BF9B38D0045CB83 /* Resources */ = {
+		04A903632C0E753F008F0BF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0463F5A22BF9B38F0045CB83 /* Preview Assets.xcassets in Resources */,
-				0463F59F2BF9B38F0045CB83 /* Assets.xcassets in Resources */,
+				04A903702C0E7540008F0BF2 /* Preview Assets.xcassets in Resources */,
+				04A9036D2C0E7540008F0BF2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0463F5A52BF9B38F0045CB83 /* Resources */ = {
+		04A903732C0E7540008F0BF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0463F5B42BF9B3910045CB83 /* Preview Assets.xcassets in Resources */,
-				0463F5B12BF9B3900045CB83 /* Assets.xcassets in Resources */,
+				04A903822C0E7541008F0BF2 /* Preview Assets.xcassets in Resources */,
+				04A9037F2C0E7541008F0BF2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0463F5932BF9B38D0045CB83 /* Sources */ = {
+		04A903612C0E753F008F0BF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F9A9D52BFDAA0D000F855B /* NetworkManager.swift in Sources */,
-				0463F59D2BF9B38D0045CB83 /* HomeView.swift in Sources */,
-				0452459B2C0D4CAB00DE4C03 /* SearchResultsView.swift in Sources */,
-				049DDABF2BF9EA1F002C3A55 /* SettingsPanelView.swift in Sources */,
-				049DDABD2BF9E2C2002C3A55 /* ControlPanelView.swift in Sources */,
-				04C3B64C2C0D7941001BC95A /* MapOverwatchView.swift in Sources */,
-				04F9A9D32BFDA5F1000F855B /* ThermostatEnums.swift in Sources */,
-				04C3B64A2C0D4F1F001BC95A /* LocationService.swift in Sources */,
-				049DDABB2BF9D20B002C3A55 /* StepperView.swift in Sources */,
-				04F9A9D12BFDA25E000F855B /* ThermostatModel.swift in Sources */,
-				049DDAC12BF9EB14002C3A55 /* AddressSearchView.swift in Sources */,
-				0463F59B2BF9B38D0045CB83 /* thermostatApp.swift in Sources */,
+				0422F7DC2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift in Sources */,
+				04A903972C0E83F5008F0BF2 /* MapOverwatchView.swift in Sources */,
+				0422F7D62C0E95C500E90FF3 /* SearchResultsView.swift in Sources */,
+				04A9038E2C0E77F6008F0BF2 /* Model.swift in Sources */,
+				0422F7DE2C0EA8B900E90FF3 /* ThermostatModel.swift in Sources */,
+				04A9036B2C0E753F008F0BF2 /* ContentView.swift in Sources */,
+				04A903952C0E8381008F0BF2 /* ControlPanelView.swift in Sources */,
+				040A97062C0E91E90033D05E /* AddressSearchView.swift in Sources */,
+				04A903902C0E78CA008F0BF2 /* SettingsModel.swift in Sources */,
+				04A903992C0E8417008F0BF2 /* SettingsPanelView.swift in Sources */,
+				04A903692C0E753F008F0BF2 /* thermostatApp.swift in Sources */,
+				0422F7D42C0E957100E90FF3 /* LocationService.swift in Sources */,
+				0422F7DA2C0E970300E90FF3 /* StepperView.swift in Sources */,
+				04A9039C2C0E84B0008F0BF2 /* ThermostatEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0463F5A32BF9B38F0045CB83 /* Sources */ = {
+		04A903712C0E7540008F0BF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0463F5AF2BF9B38F0045CB83 /* ContentView.swift in Sources */,
-				0463F5AD2BF9B38F0045CB83 /* thermostatApp.swift in Sources */,
+				04A9037D2C0E7540008F0BF2 /* ContentView.swift in Sources */,
+				04A9037B2C0E7540008F0BF2 /* thermostatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0463F5AA2BF9B38F0045CB83 /* PBXTargetDependency */ = {
+		04A903782C0E7540008F0BF2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0463F5A62BF9B38F0045CB83 /* thermostat Watch App */;
-			targetProxy = 0463F5A92BF9B38F0045CB83 /* PBXContainerItemProxy */;
+			target = 04A903742C0E7540008F0BF2 /* thermostat Watch App */;
+			targetProxy = 04A903772C0E7540008F0BF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0463F5B52BF9B3910045CB83 /* Debug */ = {
+		04A903832C0E7541008F0BF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -397,7 +405,7 @@
 			};
 			name = Debug;
 		};
-		0463F5B62BF9B3910045CB83 /* Release */ = {
+		04A903842C0E7541008F0BF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -450,7 +458,7 @@
 			};
 			name = Release;
 		};
-		0463F5B82BF9B3910045CB83 /* Debug */ = {
+		04A903862C0E7541008F0BF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -480,7 +488,7 @@
 			};
 			name = Debug;
 		};
-		0463F5B92BF9B3910045CB83 /* Release */ = {
+		04A903872C0E7541008F0BF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -511,7 +519,7 @@
 			};
 			name = Release;
 		};
-		0463F5BC2BF9B3910045CB83 /* Debug */ = {
+		04A9038A2C0E7541008F0BF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -524,7 +532,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app requires your location while in use to display the map.";
@@ -549,7 +556,7 @@
 			};
 			name = Debug;
 		};
-		0463F5BD2BF9B3910045CB83 /* Release */ = {
+		04A9038B2C0E7541008F0BF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -562,7 +569,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app requires your location while in use to display the map.";
@@ -591,29 +597,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0463F5922BF9B38C0045CB83 /* Build configuration list for PBXProject "thermostat" */ = {
+		04A903602C0E753E008F0BF2 /* Build configuration list for PBXProject "thermostat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0463F5B52BF9B3910045CB83 /* Debug */,
-				0463F5B62BF9B3910045CB83 /* Release */,
+				04A903832C0E7541008F0BF2 /* Debug */,
+				04A903842C0E7541008F0BF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0463F5B72BF9B3910045CB83 /* Build configuration list for PBXNativeTarget "thermostat Watch App" */ = {
+		04A903852C0E7541008F0BF2 /* Build configuration list for PBXNativeTarget "thermostat Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0463F5B82BF9B3910045CB83 /* Debug */,
-				0463F5B92BF9B3910045CB83 /* Release */,
+				04A903862C0E7541008F0BF2 /* Debug */,
+				04A903872C0E7541008F0BF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0463F5BB2BF9B3910045CB83 /* Build configuration list for PBXNativeTarget "thermostat" */ = {
+		04A903892C0E7541008F0BF2 /* Build configuration list for PBXNativeTarget "thermostat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0463F5BC2BF9B3910045CB83 /* Debug */,
-				0463F5BD2BF9B3910045CB83 /* Release */,
+				04A9038A2C0E7541008F0BF2 /* Debug */,
+				04A9038B2C0E7541008F0BF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -621,7 +627,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04F9A9D62BFDAD8E000F855B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		0422F7DF2C0EAAE000E90FF3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -632,12 +638,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		04F9A9D72BFDAD8E000F855B /* Alamofire */ = {
+		0422F7E02C0EAAE000E90FF3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04F9A9D62BFDAD8E000F855B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 0422F7DF2C0EAAE000E90FF3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 0463F58F2BF9B38C0045CB83 /* Project object */;
+	rootObject = 04A9035D2C0E753E008F0BF2 /* Project object */;
 }
