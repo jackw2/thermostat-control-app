@@ -33,9 +33,9 @@ struct ControlPanelView: View {
             .frame(maxWidth: .infinity, minHeight: 300, maxHeight: 500)
             
             HStack {
-                StepperView(setpoint: $heatSetpoint, gradientColors: [.heat, .blush])
+                StepperView(setpoint: $heatSetpoint, darkColor: .heat, lightColor: .blush)
                     .padding()
-                StepperView(setpoint: $coolSetpoint, gradientColors: [.bunny, .wind])
+                StepperView(setpoint: $coolSetpoint, darkColor: .bunny, lightColor: .wind)
                     .padding()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
