@@ -11,6 +11,7 @@ struct SettingsPanelView: View {
     @Environment(SettingsModel.self) private var settingsModel
     @State var a = 1
     var body: some View {
+        @Bindable var settingsModel = settingsModel
         NavigationStack () {
             Form {
                 Section("Server Connection") {
@@ -30,10 +31,15 @@ struct SettingsPanelView: View {
                     Text("Latitude: \(String(format: "%.6f", settingsModel.homeLatitude))")
                     Text("Longitude: \(String(format: "%.6f", settingsModel.homeLongitude))")
                     NavigationLink("Set Home Address", value: "address")
-                        .navigationDestination(for: String.self) { _ in
-                            AddressSearchView()
-                        }
                 }
+                Section("Misc") {
+                    Stepper(value: $settingsModel.homeRadius, in: 1...10) {
+                        Text("Home Radius: \(settingsModel.homeRadius) miles")
+                    }
+                }
+            }
+            .navigationDestination(for: String.self) { _ in
+                AddressSearchView()
             }
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)

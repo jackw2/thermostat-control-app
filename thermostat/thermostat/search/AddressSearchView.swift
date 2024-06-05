@@ -21,7 +21,7 @@ struct AddressSearchView: View {
     var body: some View {
         Map(position: $position, selection: $selectedLocation) {
             ForEach(searchResults) { result in
-                Marker(result.title, image: "mappin", coordinate: result.location)
+                Marker(result.title, coordinate: result.location)
                 .tag(result)
             }
         }

@@ -82,4 +82,20 @@ class SettingsModel {
             }
         }
     }
+    
+    var homeRadius: Int {
+        get {
+            self.access(keyPath: \.homeRadius)
+            if let radius = ud.object(forKey: "homeRadius") as? Int {
+                return radius
+            } else {
+                return 1
+            }
+        }
+        set {
+            self.withMutation(keyPath: \.homeRadius) {
+                ud.set(newValue, forKey: "homeRadius")
+            }
+        }
+    }
 }

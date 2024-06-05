@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MapKit
-
 struct MapOverwatchView: View {
     var locationManager = CLLocationManager()
     @State private var cameraPosition: MapCameraPosition = .automatic
@@ -15,14 +14,22 @@ struct MapOverwatchView: View {
     @AppStorage("homeLatitude") private var homeLatitude: Double = 38.897957
     @AppStorage("homeLongitude") private var homeLongitude: Double = -77.036560
     @State private var homeAddress:CLLocationCoordinate2D? = nil
+
+    @Environment(SettingsModel.self) private var settingsModel
+    private var radiusInMeters: Double {
+        let radiusInMiles = Measurement<UnitLength>(value: Double(settingsModel.homeRadius), unit: .miles)
+        return radiusInMiles.converted(to: .meters).value
+    }
     
     var body: some View {
+        @Bindable var settingsModel = settingsModel
+        
         Map(position: $cameraPosition) {
             UserAnnotation()
             if let homeAddress = homeAddress {
                 Marker(homeTitle, coordinate: homeAddress)
                     .tint(.blue)
-                MapCircle(center: homeAddress, radius: 1000)
+                MapCircle(center: homeAddress, radius: radiusInMeters)
                     .stroke(.blue.opacity(0.5), lineWidth: 5)
                     .foregroundStyle(.white.opacity(0.2))
                     .mapOverlayLevel(level: .aboveLabels)
@@ -37,6 +44,14 @@ struct MapOverwatchView: View {
 }
 
 #Preview {
-    MapOverwatchView()
+    struct PreviewWrapper: View {
+        @State private var settingsModel = SettingsModel.standard
+        
+        var body: some View {
+            MapOverwatchView()
+                .environment(settingsModel)
+        }
+    }
+    return PreviewWrapper()
 }
 
