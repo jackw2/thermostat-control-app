@@ -13,20 +13,22 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack () {
             Form {
-                Section(header: Text("Server Connection")) {
+                Section("Server Connection") {
                     TextField("Server URL", text: $settings.serverURL)
                     SecureField("Authentication Secret", text: $settings.authenticationSecret)
                 }
                 
-                Section(header: Text("Home Address")) {
+                Section("Home Address") {
                     TextField("Home Name", text: $settings.homeTitle)
                     Text("Latitude: \(String(format: "%.6f", settings.homeLatitude))")
                     Text("Longitude: \(String(format: "%.6f", settings.homeLongitude))")
-                    
+                    NavigationLink("Set Home Address", value: "address")
+                }
+                
+                Section("Misc") {
                     Stepper(value: $settings.homeRadiusInMiles, in: 1...10) {
                         Text("Home Radius: \(settings.homeRadiusInMiles) miles")
                     }
-                    NavigationLink("Set Home Address", value: "address")
                 }
             }
             .navigationDestination(for: String.self) { _ in
