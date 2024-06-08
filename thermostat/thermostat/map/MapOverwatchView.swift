@@ -15,7 +15,7 @@ struct MapOverwatchView: View {
     @AppStorage("homeLongitude") private var homeLongitude: Double = -77.036560
     @State private var homeAddress:CLLocationCoordinate2D? = nil
 
-    @Environment(SettingsModel.self) private var settingsModel
+    @Environment(SettingsModelOld.self) private var settingsModel
     private var radiusInMeters: Double {
         let radiusInMiles = Measurement<UnitLength>(value: Double(settingsModel.homeRadius), unit: .miles)
         return radiusInMiles.converted(to: .meters).value
@@ -45,7 +45,7 @@ struct MapOverwatchView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var settingsModel = SettingsModel.standard
+        @State private var settingsModel = SettingsModelOld.standard
         
         var body: some View {
             MapOverwatchView()

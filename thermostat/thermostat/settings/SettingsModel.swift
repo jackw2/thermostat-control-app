@@ -1,101 +1,48 @@
 //
-//  Settings.swift
+//  SettingsModel.swift
 //  thermostat
 //
 //  Created by Jack Wesolowski on 6/3/24.
 //
+import SwiftUI
+import Combine
 
-import Foundation
-import Observation
+class SettingsModel: ObservableObject {
+    static let shared = SettingsModel()
+    private init() {
+        if let storedSecret = getAuthenticationSecret() {
+            authenticationSecret = storedSecret
+        }
+    }
+    
+    // MARK: Server Settings
+    @AppStorage("serverURL") var serverURL: String = ""
+    @Published var authenticationSecret: String = "" {
+        didSet {
+            saveAuthenticationSecret(authenticationSecret)
+        }
+    }
+    private let keychainAccount = "com.yourapp.account.authenticationSecret"
+    private func saveAuthenticationSecret(_ secret: String) {
+        KeychainUtility.savePassword(secret, for: keychainAccount)
+    }
+    
+    private func getAuthenticationSecret() -> String? {
+        return KeychainUtility.getPassword(for: keychainAccount)
+    }
 
-@Observable
-class SettingsModel {
-    static let standard = SettingsModel()
-    private init() {}
+    // MARK: Home settings
+    // Home address defaulting to the white house on first launch
+    @AppStorage("homeTitle") var homeTitle: String = "The White House"
+    @AppStorage("homeLatitude") var homeLatitude: Double = 38.897957
+    @AppStorage("homeLongitude") var homeLongitude: Double = 38.897957
     
-    private let ud = UserDefaults.standard
-    
-    var serverURL: String {
-        get {
-            self.access(keyPath: \.serverURL)
-            return ud.string(forKey: "serverURL") ?? ""
-        }
-        set {
-            self.withMutation(keyPath: \.serverURL) {
-                ud.set(newValue, forKey: "serverURL")
-            }
-        }
+    // MARK: Misc settings
+    @AppStorage("homeRadiusInMiles") var homeRadiusInMiles: Int = 1
+    var homeRadiusInMeters: Double {
+        // 1 mile = 1609.34 meters
+        return Double(homeRadiusInMiles) * 1609.34
     }
     
-    var authSecret: String {
-        get {
-            self.access(keyPath: \.authSecret)
-            return ud.string(forKey: "authSecret") ?? ""
-        }
-        set {
-            self.withMutation(keyPath: \.authSecret) {
-                ud.set(newValue, forKey: "authSecret")
-            }
-        }
-    }
     
-    var homeTitle: String {
-        get {
-            self.access(keyPath: \.homeTitle)
-            return ud.string(forKey: "homeTitle") ?? "The White House"
-        }
-        set {
-            self.withMutation(keyPath: \.homeTitle) {
-                ud.set(newValue, forKey: "homeTitle")
-            }
-        }
-    }
-    
-    var homeLatitude: Double {
-        get {
-            self.access(keyPath: \.homeLatitude)
-            if let lat = ud.object(forKey: "homeLatitude") as? Double {
-                return lat
-            } else {
-                return 38.897957
-            }
-        }
-        set {
-            self.withMutation(keyPath: \.homeLatitude) {
-                ud.set(newValue, forKey: "homeLatitude")
-            }
-        }
-    }
-    
-    var homeLongitude: Double {
-        get {
-            self.access(keyPath: \.homeLongitude)
-            if let long = ud.object(forKey: "homeLongitude") as? Double {
-                return long
-            } else {
-                return -77.036560
-            }
-        }
-        set {
-            self.withMutation(keyPath: \.homeLongitude) {
-                ud.set(newValue, forKey: "homeLongitude")
-            }
-        }
-    }
-    
-    var homeRadius: Int {
-        get {
-            self.access(keyPath: \.homeRadius)
-            if let radius = ud.object(forKey: "homeRadius") as? Int {
-                return radius
-            } else {
-                return 1
-            }
-        }
-        set {
-            self.withMutation(keyPath: \.homeRadius) {
-                ud.set(newValue, forKey: "homeRadius")
-            }
-        }
-    }
 }

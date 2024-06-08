@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SettingsPanelView: View {
-    @Environment(SettingsModel.self) private var settingsModel
+struct SettingsPanelViewOld: View {
+    @Environment(SettingsModelOld.self) private var settingsModel
     @State var a = 1
     var body: some View {
         @Bindable var settingsModel = settingsModel
@@ -50,10 +50,10 @@ struct SettingsPanelView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var settingsModel = SettingsModel.standard
+        @State private var settingsModel = SettingsModelOld.standard
         
         var body: some View {
-            SettingsPanelView()
+            SettingsPanelViewOld()
                 .environment(settingsModel)
         }
     }

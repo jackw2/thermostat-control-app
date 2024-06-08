@@ -16,7 +16,7 @@ struct AddressSearchView: View {
     @State private var isSheetPresented: Bool = true
     @State private var scene: MKLookAroundScene?
     @State private var didSetAddress = false
-    @Environment(SettingsModel.self) private var settingsModel
+    @Environment(SettingsModelOld.self) private var settingsModel
     
     var body: some View {
         Map(position: $position, selection: $selectedLocation) {
@@ -82,7 +82,7 @@ struct AddressSearchView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var settingsModel = SettingsModel.standard
+        @State private var settingsModel = SettingsModelOld.standard
         var body: some View {
             AddressSearchView()
                 .environment(settingsModel)

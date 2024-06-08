@@ -14,7 +14,7 @@ struct ControlPanelView: View {
     @State private var count = 0
     @State private var isConnected = true
     
-    @Environment(SettingsModel.self) private var settingsModel
+    @Environment(SettingsModelOld.self) private var settingsModel
     @State private var thermostatModel = ThermostatModel.standard
     
     var body: some View {
@@ -47,7 +47,7 @@ struct ControlPanelView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var settingsModel = SettingsModel.standard
+        @State private var settingsModel = SettingsModelOld.standard
         
         var body: some View {
             ControlPanelView()
