@@ -166,9 +166,9 @@
 			children = (
 				047498A52C14E06D00CBD8B8 /* settings */,
 				0422F7D22C0E94FA00E90FF3 /* search */,
-				0422F7D82C0E968000E90FF3 /* settingsOld */,
-				0422F7D72C0E966400E90FF3 /* control panel */,
 				04A903932C0E7A2D008F0BF2 /* map */,
+				0422F7D72C0E966400E90FF3 /* control panel */,
+				0422F7D82C0E968000E90FF3 /* settingsOld */,
 				04A903682C0E753F008F0BF2 /* thermostatApp.swift */,
 				04A9036A2C0E753F008F0BF2 /* ContentView.swift */,
 				04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */,
