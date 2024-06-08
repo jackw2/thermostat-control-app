@@ -1,5 +1,5 @@
 //
-//  Control.swift
+//  ControlPanelView.swift
 //  thermostat
 //
 //  Created by Jack Wesolowski on 5/19/24.
@@ -8,35 +8,33 @@
 import SwiftUI
 
 struct ControlPanelView: View {
-    @State private var currentTemp: Double = 72.0
-    @State private var heatSetpoint = 70
-    @State private var coolSetpoint = 80
-    @State private var count = 0
-    @State private var isConnected = true
-    
-    @Environment(SettingsModelOld.self) private var settingsModel
-    @State private var thermostatModel = ThermostatModel.standard
-    
+    @EnvironmentObject var settings: SettingsModel
+    @StateObject var thermostat: ThermostatModel = ThermostatModel()
     var body: some View {
-        VStack() {
-            ConnectionIndicatorView(isConnected: $isConnected)
-            Group {
-                VStack {
-                    Text(settingsModel.homeTitle)
-                        .frame(alignment: .top)
-                        .lineLimit(1)
-                        .font(.system(size: 24, weight: .medium))
-                    Text("\(currentTemp, specifier: "%.1f")°F")
-                        .font(.system(size: 72, weight: .medium))
-                }
+        VStack {
+            ConnectionIndicatorView(isConnected: thermostat.isConnected)
+            VStack {
+                Text(settings.homeTitle)
+                    .frame(alignment: .top)
+                    .lineLimit(1)
+                    .font(.system(size: 24, weight: .medium))
+                Text("\(String(format: "%.1f", thermostat.spaceTemp))°F")
+                    .font(.system(size: 72, weight: .medium))
             }
             .frame(maxWidth: .infinity, minHeight: 300, maxHeight: 500)
             
-            HStack {
-                StepperView(setpoint: $heatSetpoint, darkColor: .heat, lightColor: .blush)
-                    .padding()
-                StepperView(setpoint: $coolSetpoint, darkColor: .bunny, lightColor: .wind)
-                    .padding()
+            Text("Status: " + thermostat.statusText)
+            VStack {
+                HStack {
+                    PickerControl(pickedValue: $thermostat.fanMode, title: "Fan", systemImage: "fan")
+                    PickerControl(pickedValue: $thermostat.mode, title: "Mode", systemImage: "gearshape")
+                }
+                HStack {
+                    StepperControl(setpoint: $thermostat.heatTo, darkColor: .heat, lightColor: .blush)
+                        .padding()
+                    StepperControl(setpoint: $thermostat.coolTo, darkColor: .bunny, lightColor: .wind)
+                        .padding()
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.highlightBackground)
@@ -47,11 +45,11 @@ struct ControlPanelView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @State private var settingsModel = SettingsModelOld.standard
+        @StateObject private var settings = SettingsModel.shared
         
         var body: some View {
             ControlPanelView()
-                .environment(settingsModel)
+                .environmentObject(settings)
         }
     }
     return PreviewWrapper()

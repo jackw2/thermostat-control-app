@@ -37,5 +37,13 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    struct PreviewWrapper: View {
+        @StateObject private var settings = SettingsModel.shared
+        
+        var body: some View {
+            ContentView()
+                .environmentObject(settings)
+        }
+    }
+    return PreviewWrapper()
 }

@@ -1,5 +1,5 @@
 //
-//  SetpointView.swift
+//  StepperControl.swift
 //  thermostat
 //
 //  Created by Jack Wesolowski on 5/19/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StepperView: View {
+struct StepperControl: View {
     @Binding var setpoint: Int
     var darkColor: Color
     var lightColor: Color
@@ -81,9 +81,9 @@ struct StepperView: View {
                 Rectangle()
                     .fill(.highlightBackground)
                 VStack {
-                    StepperView(setpoint: $setpoint, darkColor: .heat, lightColor: .blush)
+                    StepperControl(setpoint: $setpoint, darkColor: .heat, lightColor: .blush)
                         .padding()
-                    StepperView(setpoint: $setpoint, darkColor: .heat, lightColor: .blush, neomorphismInset: false)
+                    StepperControl(setpoint: $setpoint, darkColor: .heat, lightColor: .blush, neomorphismInset: false)
                 }
             }
         }
