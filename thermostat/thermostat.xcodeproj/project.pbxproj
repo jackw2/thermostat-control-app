@@ -13,6 +13,7 @@
 		0422F7DA2C0E970300E90FF3 /* StepperControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7D92C0E970300E90FF3 /* StepperControl.swift */; };
 		0422F7DC2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */; };
 		0422F7E12C0EAAE000E90FF3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0422F7E02C0EAAE000E90FF3 /* Alamofire */; };
+		0452C1772C16563F005CC0D2 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452C1762C16563F005CC0D2 /* LocationModel.swift */; };
 		047498A42C14E03E00CBD8B8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047498A32C14E03E00CBD8B8 /* SettingsModel.swift */; };
 		047498A92C14E4EF00CBD8B8 /* KeychainUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047498A82C14E4EF00CBD8B8 /* KeychainUtility.swift */; };
 		047498AB2C14EA0C00CBD8B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047498AA2C14EA0C00CBD8B8 /* SettingsView.swift */; };
@@ -62,6 +63,7 @@
 		0422F7D52C0E95C500E90FF3 /* SearchResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		0422F7D92C0E970300E90FF3 /* StepperControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperControl.swift; sourceTree = "<group>"; };
 		0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionIndicatorView.swift; sourceTree = "<group>"; };
+		0452C1762C16563F005CC0D2 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		047498A32C14E03E00CBD8B8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		047498A82C14E4EF00CBD8B8 /* KeychainUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtility.swift; sourceTree = "<group>"; };
 		047498AA2C14EA0C00CBD8B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */,
+				0452C1762C16563F005CC0D2 /* LocationModel.swift */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				0422F7D62C0E95C500E90FF3 /* SearchResultsView.swift in Sources */,
 				04A9036B2C0E753F008F0BF2 /* ContentView.swift in Sources */,
 				040A97062C0E91E90033D05E /* AddressSearchView.swift in Sources */,
+				0452C1772C16563F005CC0D2 /* LocationModel.swift in Sources */,
 				047498AB2C14EA0C00CBD8B8 /* SettingsView.swift in Sources */,
 				04A903692C0E753F008F0BF2 /* thermostatApp.swift in Sources */,
 				04ED4C922C15301600A488AF /* NetworkService.swift in Sources */,

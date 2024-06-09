@@ -49,7 +49,10 @@ enum FanState: Int {
 }
 
 class ThermostatModel: ObservableObject {
-    init() {
+    private let settings: SettingsModel
+    
+    init(settings: SettingsModel) {
+        self.settings = settings
         _ = networkService // force network service to initialize
     }
     
@@ -167,7 +170,7 @@ class ThermostatModel: ObservableObject {
     // network
     @Published var isConnected = false
     lazy var networkService: NetworkService = {
-        return NetworkService(thermostat: self)
+        return NetworkService(thermostat: self, settings: self.settings)
     }()
     
     // location

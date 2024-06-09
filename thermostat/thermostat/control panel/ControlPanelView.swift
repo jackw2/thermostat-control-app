@@ -10,7 +10,7 @@ import Combine
 
 struct ControlPanelView: View {
     @EnvironmentObject var settings: SettingsModel
-    @StateObject var thermostat: ThermostatModel = ThermostatModel()
+    @EnvironmentObject var thermostat: ThermostatModel
     
     var body: some View {
         VStack {
@@ -56,11 +56,25 @@ struct ControlPanelView: View {
 
 #Preview {
     struct PreviewWrapper: View {
-        @StateObject private var settings = SettingsModel.shared
+        @StateObject private var settings: SettingsModel
+        @StateObject private var thermostat: ThermostatModel
+        @StateObject private var location: LocationModel
+        
+        init() {
+            let settings = SettingsModel.shared
+            let thermostat = ThermostatModel(settings: settings)
+            let location = LocationModel(settings: settings, thermostat: thermostat)
+                
+            _settings = StateObject(wrappedValue: settings)
+            _thermostat = StateObject(wrappedValue: thermostat)
+            _location = StateObject(wrappedValue: location)
+            }
         
         var body: some View {
             ControlPanelView()
                 .environmentObject(settings)
+                .environmentObject(thermostat)
+                .environmentObject(location)
         }
     }
     return PreviewWrapper()

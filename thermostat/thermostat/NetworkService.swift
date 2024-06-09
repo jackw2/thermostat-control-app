@@ -22,8 +22,8 @@ struct DeviceStatus: Codable {
 }
 
 class NetworkService {
-    var thermostat: ThermostatModel
-    private var settings: SettingsModel = SettingsModel.shared
+    private let thermostat: ThermostatModel
+    private let settings: SettingsModel
     private var connectionCheckTimer: Timer?
     private var serverURL: String {
         return settings.serverURL
@@ -35,8 +35,9 @@ class NetworkService {
         ]
     }
     
-    init(thermostat: ThermostatModel) {
+    init(thermostat: ThermostatModel, settings: SettingsModel) {
         self.thermostat = thermostat
+        self.settings = settings
         startConnectionCheckTimer()
     }
     deinit {
