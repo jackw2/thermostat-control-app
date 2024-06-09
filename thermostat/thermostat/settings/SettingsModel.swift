@@ -22,7 +22,7 @@ class SettingsModel: ObservableObject {
             saveAuthenticationSecret(authenticationSecret)
         }
     }
-    private let keychainAccount = "com.yourapp.account.authenticationSecret"
+    private let keychainAccount = "com.thermostat.authenticationSecret"
     private func saveAuthenticationSecret(_ secret: String) {
         KeychainUtility.savePassword(secret, for: keychainAccount)
     }
