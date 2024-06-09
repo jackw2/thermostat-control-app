@@ -36,6 +36,7 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
     }
     
+    @Published var locationPermissionWasApproved = false
     func requestLocationAuthorization() {
         if locationManager.authorizationStatus != .authorizedAlways {
             // apple requires requesting when in use before always permission
@@ -46,6 +47,8 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 locationManager.requestAlwaysAuthorization()
             }
         }
+        
+        locationPermissionWasApproved = locationManager.authorizationStatus == .authorizedAlways
     }
     
 }

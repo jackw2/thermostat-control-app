@@ -64,6 +64,7 @@
 		0422F7D92C0E970300E90FF3 /* StepperControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperControl.swift; sourceTree = "<group>"; };
 		0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionIndicatorView.swift; sourceTree = "<group>"; };
 		0452C1762C16563F005CC0D2 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		0452C1782C1660C2005CC0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		047498A32C14E03E00CBD8B8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		047498A82C14E4EF00CBD8B8 /* KeychainUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtility.swift; sourceTree = "<group>"; };
 		047498AA2C14EA0C00CBD8B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		04A903672C0E753F008F0BF2 /* thermostat */ = {
 			isa = PBXGroup;
 			children = (
+				0452C1782C1660C2005CC0D2 /* Info.plist */,
 				047498A52C14E06D00CBD8B8 /* settings */,
 				0422F7D22C0E94FA00E90FF3 /* search */,
 				04A903932C0E7A2D008F0BF2 /* map */,
@@ -539,6 +541,7 @@
 				DEVELOPMENT_TEAM = R89BF6GQ9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = thermostat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Thermostat;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
@@ -576,6 +579,7 @@
 				DEVELOPMENT_TEAM = R89BF6GQ9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = thermostat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Thermostat;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
