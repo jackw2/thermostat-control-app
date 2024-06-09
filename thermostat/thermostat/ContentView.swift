@@ -30,7 +30,13 @@ struct ContentView: View {
                 }
         }
         .onAppear() {
-            locationManager.requestAlwaysAuthorization()
+            if locationManager.authorizationStatus != .authorizedAlways {
+                locationManager.requestWhenInUseAuthorization()
+                if locationManager.authorizationStatus == .authorizedWhenInUse {
+                    print("Requesting always authorization")
+                    locationManager.requestAlwaysAuthorization()
+                }
+            }
         }
     }
 }
