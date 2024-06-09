@@ -84,6 +84,7 @@ class ThermostatModel: ObservableObject {
     
     // network
     @Published var isConnected = false
+    var networkService = NetworkService(thermostat: self)
     
     // location
     @Published var awayMode: AwaySetting = .away
