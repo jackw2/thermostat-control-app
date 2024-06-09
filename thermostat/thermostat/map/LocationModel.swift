@@ -14,7 +14,7 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let thermostat: ThermostatModel
     
     let locationManager: CLLocationManager
-    private var inRadius: Bool = false {
+    @Published var inRadius: Bool = false {
         didSet {
             thermostat.awayMode = inRadius ? .home : .away
         }
