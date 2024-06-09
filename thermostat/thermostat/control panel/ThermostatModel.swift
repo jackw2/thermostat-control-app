@@ -59,7 +59,7 @@ class ThermostatModel: ObservableObject {
         fanMode = (fanMode == .auto) ? .on : .auto
     }
     
-    // state
+    // thermostat status
     @Published var spaceTemp: Double = 0.0
     @Published var thermostatState: CurrentState = .idle
     @Published var fanState: FanState = .off

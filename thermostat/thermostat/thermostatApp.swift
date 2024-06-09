@@ -10,13 +10,11 @@ import SwiftUI
 @main
 struct thermostatApp: App {
     @StateObject private var settings = SettingsModel.shared
-    @State private var settingsModel = SettingsModelOld.standard
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(settings)
-                .environment(settingsModel)
         }
     }
 }

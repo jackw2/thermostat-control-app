@@ -43,6 +43,4 @@ class SettingsModel: ObservableObject {
         // 1 mile = 1609.34 meters
         return Double(homeRadiusInMiles) * 1609.34
     }
-    
-    
 }

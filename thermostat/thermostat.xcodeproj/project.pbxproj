@@ -12,7 +12,6 @@
 		0422F7D62C0E95C500E90FF3 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7D52C0E95C500E90FF3 /* SearchResultsView.swift */; };
 		0422F7DA2C0E970300E90FF3 /* StepperControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7D92C0E970300E90FF3 /* StepperControl.swift */; };
 		0422F7DC2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */; };
-		0422F7DE2C0EA8B900E90FF3 /* ThermostatModelOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F7DD2C0EA8B800E90FF3 /* ThermostatModelOld.swift */; };
 		0422F7E12C0EAAE000E90FF3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0422F7E02C0EAAE000E90FF3 /* Alamofire */; };
 		047498A42C14E03E00CBD8B8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047498A32C14E03E00CBD8B8 /* SettingsModel.swift */; };
 		047498A92C14E4EF00CBD8B8 /* KeychainUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047498A82C14E4EF00CBD8B8 /* KeychainUtility.swift */; };
@@ -28,12 +27,9 @@
 		04A9037D2C0E7540008F0BF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9037C2C0E7540008F0BF2 /* ContentView.swift */; };
 		04A9037F2C0E7541008F0BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A9037E2C0E7541008F0BF2 /* Assets.xcassets */; };
 		04A903822C0E7541008F0BF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A903812C0E7541008F0BF2 /* Preview Assets.xcassets */; };
-		04A903902C0E78CA008F0BF2 /* SettingsModelOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9038F2C0E78CA008F0BF2 /* SettingsModelOld.swift */; };
-		04A903952C0E8381008F0BF2 /* ControlPanelViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903942C0E8381008F0BF2 /* ControlPanelViewOld.swift */; };
 		04A903972C0E83F5008F0BF2 /* MapOverwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */; };
-		04A903992C0E8417008F0BF2 /* SettingsPanelViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A903982C0E8417008F0BF2 /* SettingsPanelViewOld.swift */; };
-		04A9039C2C0E84B0008F0BF2 /* ThermostatEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */; };
 		04ED4C8D2C150E3E00A488AF /* PickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED4C8C2C150E3E00A488AF /* PickerControl.swift */; };
+		04ED4C8F2C15291100A488AF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED4C8E2C15291100A488AF /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +62,6 @@
 		0422F7D52C0E95C500E90FF3 /* SearchResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		0422F7D92C0E970300E90FF3 /* StepperControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperControl.swift; sourceTree = "<group>"; };
 		0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionIndicatorView.swift; sourceTree = "<group>"; };
-		0422F7DD2C0EA8B800E90FF3 /* ThermostatModelOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatModelOld.swift; sourceTree = "<group>"; };
 		047498A32C14E03E00CBD8B8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		047498A82C14E4EF00CBD8B8 /* KeychainUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtility.swift; sourceTree = "<group>"; };
 		047498AA2C14EA0C00CBD8B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -82,12 +77,9 @@
 		04A9037C2C0E7540008F0BF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04A9037E2C0E7541008F0BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A903812C0E7541008F0BF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		04A9038F2C0E78CA008F0BF2 /* SettingsModelOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelOld.swift; sourceTree = "<group>"; };
-		04A903942C0E8381008F0BF2 /* ControlPanelViewOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPanelViewOld.swift; sourceTree = "<group>"; };
 		04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOverwatchView.swift; sourceTree = "<group>"; };
-		04A903982C0E8417008F0BF2 /* SettingsPanelViewOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPanelViewOld.swift; sourceTree = "<group>"; };
-		04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatEnums.swift; sourceTree = "<group>"; };
 		04ED4C8C2C150E3E00A488AF /* PickerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControl.swift; sourceTree = "<group>"; };
+		04ED4C8E2C15291100A488AF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,22 +116,12 @@
 			children = (
 				047498B02C15028000CBD8B8 /* ThermostatModel.swift */,
 				047498AC2C1500FF00CBD8B8 /* ControlPanelView.swift */,
+				04ED4C8E2C15291100A488AF /* NetworkService.swift */,
 				0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */,
 				0422F7D92C0E970300E90FF3 /* StepperControl.swift */,
 				04ED4C8C2C150E3E00A488AF /* PickerControl.swift */,
 			);
 			path = "control panel";
-			sourceTree = "<group>";
-		};
-		0422F7D82C0E968000E90FF3 /* settingsOld */ = {
-			isa = PBXGroup;
-			children = (
-				04A903942C0E8381008F0BF2 /* ControlPanelViewOld.swift */,
-				0422F7DD2C0EA8B800E90FF3 /* ThermostatModelOld.swift */,
-				04A903982C0E8417008F0BF2 /* SettingsPanelViewOld.swift */,
-				04A9038F2C0E78CA008F0BF2 /* SettingsModelOld.swift */,
-			);
-			path = settingsOld;
 			sourceTree = "<group>";
 		};
 		047498A52C14E06D00CBD8B8 /* settings */ = {
@@ -177,10 +159,8 @@
 				0422F7D22C0E94FA00E90FF3 /* search */,
 				04A903932C0E7A2D008F0BF2 /* map */,
 				0422F7D72C0E966400E90FF3 /* control panel */,
-				0422F7D82C0E968000E90FF3 /* settingsOld */,
 				04A903682C0E753F008F0BF2 /* thermostatApp.swift */,
 				04A9036A2C0E753F008F0BF2 /* ContentView.swift */,
-				04A9039B2C0E84B0008F0BF2 /* ThermostatEnums.swift */,
 				04A9036C2C0E7540008F0BF2 /* Assets.xcassets */,
 				04A9036E2C0E7540008F0BF2 /* Preview Content */,
 			);
@@ -336,19 +316,15 @@
 				04ED4C8D2C150E3E00A488AF /* PickerControl.swift in Sources */,
 				047498AD2C1500FF00CBD8B8 /* ControlPanelView.swift in Sources */,
 				0422F7D62C0E95C500E90FF3 /* SearchResultsView.swift in Sources */,
-				0422F7DE2C0EA8B900E90FF3 /* ThermostatModelOld.swift in Sources */,
 				04A9036B2C0E753F008F0BF2 /* ContentView.swift in Sources */,
-				04A903952C0E8381008F0BF2 /* ControlPanelViewOld.swift in Sources */,
 				040A97062C0E91E90033D05E /* AddressSearchView.swift in Sources */,
-				04A903902C0E78CA008F0BF2 /* SettingsModelOld.swift in Sources */,
-				04A903992C0E8417008F0BF2 /* SettingsPanelViewOld.swift in Sources */,
 				047498AB2C14EA0C00CBD8B8 /* SettingsView.swift in Sources */,
 				04A903692C0E753F008F0BF2 /* thermostatApp.swift in Sources */,
+				04ED4C8F2C15291100A488AF /* NetworkService.swift in Sources */,
 				0422F7D42C0E957100E90FF3 /* LocationService.swift in Sources */,
 				0422F7DA2C0E970300E90FF3 /* StepperControl.swift in Sources */,
 				047498A92C14E4EF00CBD8B8 /* KeychainUtility.swift in Sources */,
 				047498A42C14E03E00CBD8B8 /* SettingsModel.swift in Sources */,
-				04A9039C2C0E84B0008F0BF2 /* ThermostatEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

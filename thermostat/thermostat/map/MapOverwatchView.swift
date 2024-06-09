@@ -19,7 +19,7 @@ struct MapOverwatchView: View {
         return Map(position: $cameraPosition) {
             UserAnnotation()
             if let lastCoord = locationManager.location?.coordinate {
-                Marker("Last Updated Location", coordinate: locationManager.location!.coordinate)
+                Marker("Last Updated Location", coordinate: lastCoord)
             }
             
             Marker(settings.homeTitle, coordinate: homeCoords)

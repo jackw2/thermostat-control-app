@@ -9,7 +9,6 @@ import SwiftUI
 import CoreLocation
 
 struct ContentView: View {
-    @State private var settingsModel = SettingsModelOld.standard
     private var locationManager = CLLocationManager()
     
     var body: some View {
