@@ -8,7 +8,7 @@ import Foundation
 import Alamofire
 import Combine
 
-struct GeneralGetResponse: Codable {
+struct GeneralResponse: Codable {
     let message: String?
 }
 
@@ -49,12 +49,30 @@ class NetworkService {
         }
     }
     
-    
-    func setLocation(location: String) {
+    func setLocation(location: AwaySetting) {
         let url = serverURL + "/set_location"
-        let parameters: [String: Any] = ["location": location]
+        let parameters: [String: Any] = [
+            "location": location,
+        ]
         
-        AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralGetResponse.self) { [weak self] response in
+        AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralResponse.self) { [weak self] response in
+            guard let self = self else { return }
+            switch response.result {
+            case .success(let data):
+                if let message = data.message {
+                    print(message)
+                }
+            case .failure(let error):
+                print(error)
+                thermostat.displayError(message: error.errorDescription)
+                invalidateConnection()
+            }
+        }
+    }
+    
+    // MARK: Set controls
+    func postWithAuthorization(url: String, parameters: [String: Any]) {
+        AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralResponse.self) { [weak self] response in
             guard let self = self else { return }
             switch response.result {
             case .success(let data):
@@ -76,21 +94,28 @@ class NetworkService {
             "cool_to": coolTo,
         ]
         
-        AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralGetResponse.self) { [weak self] response in
-            guard let self = self else { return }
-            switch response.result {
-            case .success(let data):
-                if let message = data.message {
-                    print(message)
-                }
-            case .failure(let error):
-                print(error)
-                thermostat.displayError(message: error.errorDescription)
-                invalidateConnection()
-            }
-        }
+        postWithAuthorization(url: url, parameters: parameters)
     }
     
+    func setMode(mode: ModeSetting) {
+        let url = serverURL + "/set_mode"
+        let parameters: [String: Any] = [
+            "mode": mode,
+        ]
+        
+        postWithAuthorization(url: url, parameters: parameters)
+    }
+    
+    func setFan(fan: FanSetting) {
+        let url = serverURL + "/set_fan"
+        let parameters: [String: Any] = [
+            "fan": fan,
+        ]
+        
+        postWithAuthorization(url: url, parameters: parameters)
+    }
+    
+    // Mark: Connection status
     private func invalidateConnection() {
         thermostat.isConnected = false
         startConnectionCheckTimer()

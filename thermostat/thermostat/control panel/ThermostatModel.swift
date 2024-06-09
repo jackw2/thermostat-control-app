@@ -21,7 +21,7 @@ enum ModeSetting: String, CaseIterable, CustomStringConvertible, Identifiable {
     
     var id: Self { self }
     var description: String {
-        self.rawValue.capitalized
+        self.rawValue
     }
 }
 
@@ -31,7 +31,7 @@ enum FanSetting: String, CaseIterable, CustomStringConvertible, Identifiable {
     
     var id: Self { self }
     var description: String {
-        self.rawValue.capitalized
+        self.rawValue
     }
 }
 
@@ -70,8 +70,16 @@ class ThermostatModel: ObservableObject {
             networkService.setSetpoints(heatTo: heatTo, coolTo: coolTo)
         }
     }
-    @AppStorage("mode") var mode: ModeSetting = .auto 
-    @AppStorage("fanMode") var fanMode: FanSetting = .auto
+    @AppStorage("mode") var mode: ModeSetting = .auto {
+        didSet {
+            networkService.setMode(mode: mode)
+        }
+    }
+    @AppStorage("fanMode") var fanMode: FanSetting = .auto {
+        didSet {
+            networkService.setFan(fan: fanMode)
+        }
+    }
     
     func toggleFan() {
         fanMode = (fanMode == .auto) ? .on : .auto
@@ -120,7 +128,4 @@ class ThermostatModel: ObservableObject {
     
     // location
     @Published var awayMode: AwaySetting = .away
-    
-    
-    
 }

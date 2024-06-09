@@ -18,7 +18,7 @@ struct PickerControl<T: CaseIterable & Identifiable & Hashable & CustomStringCon
             Label(title, systemImage: systemImage)
             Picker(title, selection: $pickedValue)  {
                 ForEach(Array(T.allCases)) { option in
-                    Text(option.description).tag(option)
+                    Text(option.description.capitalized).tag(option)
                 }
             }
             .pickerStyle(.menu)
