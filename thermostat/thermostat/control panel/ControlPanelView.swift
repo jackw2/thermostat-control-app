@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ControlPanelView: View {
     @EnvironmentObject var settings: SettingsModel
     @StateObject var thermostat: ThermostatModel = ThermostatModel()
+    
     var body: some View {
         VStack {
             ConnectionIndicatorView(isConnected: thermostat.isConnected)
@@ -20,6 +22,9 @@ struct ControlPanelView: View {
                     .font(.system(size: 24, weight: .medium))
                 Text("\(String(format: "%.1f", thermostat.spaceTemp))°F")
                     .font(.system(size: 72, weight: .medium))
+                Button("refresh") {
+                    thermostat.refresh()
+                }
             }
             .frame(maxWidth: .infinity, minHeight: 300, maxHeight: 500)
             
@@ -43,6 +48,12 @@ struct ControlPanelView: View {
             .background(.highlightBackground)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear {
+            thermostat.startRefreshTimer()
+        }
+        .onDisappear {
+            thermostat.stopRefreshTimer()
+        }
     }
 }
 

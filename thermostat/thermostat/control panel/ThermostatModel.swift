@@ -35,7 +35,7 @@ enum FanSetting: String, CaseIterable, CustomStringConvertible, Identifiable {
     }
 }
 
-enum CurrentState: Int {
+enum CurrentState: Int, Codable {
     case idle = 0
     case heating = 1
     case cooling = 2
@@ -100,7 +100,6 @@ class ThermostatModel: ObservableObject {
         }
     }
     
-    
     var statusText: String {
         if fanState == .on && thermostatState == .idle {
             return "Fans Running"
@@ -120,6 +119,51 @@ class ThermostatModel: ObservableObject {
         }
     }
     
+    func refresh() {
+        networkService.getDeviceStatus()
+    }
+    
+    func updateStatus(status: DeviceStatus) {
+        heatTo = Int(status.heattemp)
+        coolTo = Int(status.cooltemp)
+        spaceTemp = status.spacetemp
+        thermostatState = status.state
+        awayMode = {
+            switch status.away {
+            case 1:
+                AwaySetting.away
+            default:
+                AwaySetting.home
+            }
+        }()
+        fanState = {
+            switch status.fanstate {
+            case 1:
+                FanState.on
+            default:
+                FanState.off
+            }
+        }()
+    }
+    
+    @Published private var refreshTimer: AnyCancellable?
+    func startRefreshTimer() {
+        refreshTimer?.cancel()
+        refreshTimer = nil
+        
+        refreshTimer = Timer.publish(every: 15, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                print("Thermostat status refreshing")
+                self?.refresh()
+            }
+        refresh()
+    }
+    func stopRefreshTimer() {
+        refreshTimer?.cancel()
+        refreshTimer = nil
+    }
+    
     // network
     @Published var isConnected = false
     lazy var networkService: NetworkService = {
@@ -127,5 +171,9 @@ class ThermostatModel: ObservableObject {
     }()
     
     // location
-    @Published var awayMode: AwaySetting = .away
+    @Published var awayMode: AwaySetting = .away {
+        didSet {
+            networkService.setLocation(location: awayMode)
+        }
+    }
 }

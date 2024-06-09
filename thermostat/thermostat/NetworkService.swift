@@ -12,6 +12,15 @@ struct GeneralResponse: Codable {
     let message: String?
 }
 
+struct DeviceStatus: Codable {
+    let heattemp: Double
+    let cooltemp: Double
+    let spacetemp: Double
+    let state: CurrentState
+    let away: Int
+    let fanstate: Int
+}
+
 class NetworkService {
     var thermostat: ThermostatModel
     private var settings: SettingsModel = SettingsModel.shared
@@ -34,6 +43,7 @@ class NetworkService {
         connectionCheckTimer?.invalidate()
     }
     
+    // MARK: Get
     func checkConnection() {
         AF.request("\(serverURL)/", headers: defaultHeaders).validate().response { [weak self] response in
             guard let self = self else { return }
@@ -49,19 +59,23 @@ class NetworkService {
         }
     }
     
-    func setLocation(location: AwaySetting) {
-        let url = serverURL + "/set_location"
-        let parameters: [String: Any] = [
-            "location": location,
-        ]
+    private var lastDeviceStatusRequestTime: Date?
+    func getDeviceStatus() {
+        // rate limit getting the status
+        if let lastRequestTime = lastDeviceStatusRequestTime, Date().timeIntervalSince(lastRequestTime) < 10 {
+            print("getDeviceStatus request rate limited")
+            return
+        }
+        lastDeviceStatusRequestTime = Date()
         
-        AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralResponse.self) { [weak self] response in
+        let url = serverURL + "/device_status"
+        
+        AF.request(url, method: .get, headers: defaultHeaders).validate().responseDecodable(of: DeviceStatus.self) { [weak self] response in
             guard let self = self else { return }
             switch response.result {
             case .success(let data):
-                if let message = data.message {
-                    print(message)
-                }
+                print("Device Status: \(data)")
+                thermostat.updateStatus(status: data)
             case .failure(let error):
                 print(error)
                 thermostat.displayError(message: error.errorDescription)
@@ -110,6 +124,15 @@ class NetworkService {
         let url = serverURL + "/set_fan"
         let parameters: [String: Any] = [
             "fan": fan,
+        ]
+        
+        postWithAuthorization(url: url, parameters: parameters)
+    }
+    
+    func setLocation(location: AwaySetting) {
+        let url = serverURL + "/set_location"
+        let parameters: [String: Any] = [
+            "location": location,
         ]
         
         postWithAuthorization(url: url, parameters: parameters)
