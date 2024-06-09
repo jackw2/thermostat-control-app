@@ -17,7 +17,6 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var inRadius: Bool = false {
         didSet {
             thermostat.awayMode = inRadius ? .home : .away
-            print("inRadius is now \(inRadius)")
         }
     }
     
@@ -30,9 +29,23 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         super.init()
         
         self.locationManager.delegate = self
-        self.locationManager.requestAlwaysAuthorization()
+        requestLocationAuthorization()
         self.locationManager.allowsBackgroundLocationUpdates = true
         self.locationManager.pausesLocationUpdatesAutomatically = true
+        
+        
+    }
+    
+    func requestLocationAuthorization() {
+        if locationManager.authorizationStatus != .authorizedAlways {
+            // apple requires requesting when in use before always permission
+            locationManager.requestWhenInUseAuthorization()
+            
+            if locationManager.authorizationStatus != .authorizedAlways {
+                print("Requesting always authorization")
+                locationManager.requestAlwaysAuthorization()
+            }
+        }
     }
     
 }
