@@ -22,9 +22,6 @@ struct ControlPanelView: View {
                     .font(.system(size: 24, weight: .medium))
                 Text("\(String(format: "%.1f", thermostat.spaceTemp))°F")
                     .font(.system(size: 72, weight: .medium))
-                Button("refresh") {
-                    thermostat.refresh()
-                }
             }
             .frame(maxWidth: .infinity, minHeight: 300, maxHeight: 500)
             

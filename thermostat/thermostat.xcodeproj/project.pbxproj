@@ -535,7 +535,7 @@
 				DEVELOPMENT_TEAM = R89BF6GQ9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
+				INFOPLIST_KEY_CFBundleDisplayName = Thermostat;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app requires your location while in use to display the map.";
@@ -572,7 +572,7 @@
 				DEVELOPMENT_TEAM = R89BF6GQ9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = thermostat;
+				INFOPLIST_KEY_CFBundleDisplayName = Thermostat;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The app requires your location to enable and disable your thermostat.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app requires your location while in use to display the map.";
