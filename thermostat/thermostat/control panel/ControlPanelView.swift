@@ -23,6 +23,9 @@ struct ControlPanelView: View {
             }
             .frame(maxWidth: .infinity, minHeight: 300, maxHeight: 500)
             
+            if let errorMessage = thermostat.serverErrorMessage {
+                Text("Server Error: " + errorMessage)
+            }
             Text("Status: " + thermostat.statusText)
             VStack {
                 HStack {

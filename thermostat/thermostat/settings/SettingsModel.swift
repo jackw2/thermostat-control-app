@@ -17,7 +17,7 @@ class SettingsModel: ObservableObject {
     }
     
     // MARK: Server Settings
-    @Published @AppStorage("serverURL") var serverURL: String = ""
+    @AppStorage("serverURL") var serverURL: String = ""
     @Published var authSecret: String = "" {
         didSet {
             saveAuthenticationSecret(authSecret)

@@ -49,10 +49,28 @@ enum FanState: Int {
 }
 
 class ThermostatModel: ObservableObject {
+    init() {
+        _ = networkService // force network service to initialize
+    }
+    
     // controls
-    @AppStorage("heatTo") var heatTo: Int = 70
-    @AppStorage("coolTo") var coolTo: Int = 80
-    @AppStorage("mode") var mode: ModeSetting = .auto
+    @AppStorage("heatTo") var heatTo: Int = 70 {
+        didSet {
+            if heatTo > coolTo - 2 {
+                coolTo = heatTo + 2
+            }
+            networkService.setSetpoints(heatTo: heatTo, coolTo: coolTo)
+        }
+    }
+    @AppStorage("coolTo") var coolTo: Int = 80 {
+        didSet {
+            if coolTo < heatTo + 2 {
+                heatTo = coolTo - 2
+            }
+            networkService.setSetpoints(heatTo: heatTo, coolTo: coolTo)
+        }
+    }
+    @AppStorage("mode") var mode: ModeSetting = .auto 
     @AppStorage("fanMode") var fanMode: FanSetting = .auto
     
     func toggleFan() {
@@ -63,6 +81,18 @@ class ThermostatModel: ObservableObject {
     @Published var spaceTemp: Double = 0.0
     @Published var thermostatState: CurrentState = .idle
     @Published var fanState: FanState = .off
+    
+    @Published var serverErrorMessage: String? = nil
+    private var errorMessageTimer: Timer?
+    func displayError(message: String?) {
+        serverErrorMessage = message
+        errorMessageTimer?.invalidate()
+        errorMessageTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { [weak self] _ in
+            self?.serverErrorMessage = nil
+        }
+    }
+    
+    
     var statusText: String {
         if fanState == .on && thermostatState == .idle {
             return "Fans Running"
@@ -84,8 +114,13 @@ class ThermostatModel: ObservableObject {
     
     // network
     @Published var isConnected = false
-    var networkService = NetworkService(thermostat: self)
+    lazy var networkService: NetworkService = {
+        return NetworkService(thermostat: self)
+    }()
     
     // location
     @Published var awayMode: AwaySetting = .away
+    
+    
+    
 }
