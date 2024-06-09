@@ -15,7 +15,7 @@ struct SettingsView: View {
             Form {
                 Section("Server Connection") {
                     TextField("Server URL", text: $settings.serverURL)
-                    SecureField("Authentication Secret", text: $settings.authenticationSecret)
+                    SecureField("Authentication Secret", text: $settings.authSecret)
                 }
                 
                 Section("Home Address") {

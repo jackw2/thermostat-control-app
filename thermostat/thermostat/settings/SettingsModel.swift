@@ -9,17 +9,18 @@ import Combine
 
 class SettingsModel: ObservableObject {
     static let shared = SettingsModel()
+    
     private init() {
         if let storedSecret = getAuthenticationSecret() {
-            authenticationSecret = storedSecret
+            authSecret = storedSecret
         }
     }
     
     // MARK: Server Settings
-    @AppStorage("serverURL") var serverURL: String = ""
-    @Published var authenticationSecret: String = "" {
+    @Published @AppStorage("serverURL") var serverURL: String = ""
+    @Published var authSecret: String = "" {
         didSet {
-            saveAuthenticationSecret(authenticationSecret)
+            saveAuthenticationSecret(authSecret)
         }
     }
     private let keychainAccount = "com.thermostat.authenticationSecret"
@@ -32,7 +33,7 @@ class SettingsModel: ObservableObject {
     }
 
     // MARK: Home settings
-    // Home address defaulting to the white house on first launch
+    // Home address defaulting to the White House on first launch
     @AppStorage("homeTitle") var homeTitle: String = "The White House"
     @AppStorage("homeLatitude") var homeLatitude: Double = 38.897957
     @AppStorage("homeLongitude") var homeLongitude: Double = 38.897957
