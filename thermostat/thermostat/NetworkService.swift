@@ -61,6 +61,10 @@ class NetworkService {
     
     private var lastDeviceStatusRequestTime: Date?
     func getDeviceStatus() {
+        guard serverURL != "" else {
+            return
+        }
+        
         // rate limit getting the status
         if let lastRequestTime = lastDeviceStatusRequestTime, Date().timeIntervalSince(lastRequestTime) < 10 {
             print("getDeviceStatus request rate limited")
