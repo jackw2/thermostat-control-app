@@ -36,7 +36,7 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
     }
     
-    @Published var locationPermissionWasApproved = false
+    @Published var locationAlwaysPermissionGranted = false
     func requestLocationAuthorization() {
         if locationManager.authorizationStatus != .authorizedAlways {
             // apple requires requesting when in use before always permission
@@ -48,7 +48,65 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
         }
         
-        locationPermissionWasApproved = locationManager.authorizationStatus == .authorizedAlways
+        locationAlwaysPermissionGranted = locationManager.authorizationStatus == .authorizedAlways
     }
     
+    // MARK: Monitoring
+    func startMonitoring() {
+        let homeCoordinate = CLLocationCoordinate2D(latitude: settings.homeLatitude, longitude: settings.homeLongitude)
+        let homeRadius = settings.homeRadiusInMeters
+        
+        let region = CLCircularRegion(center: homeCoordinate, radius: homeRadius, identifier: "HomeRegion")
+        region.notifyOnEntry = true
+        region.notifyOnExit = true
+        
+        self.locationManager.startMonitoring(for: region)
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    func stopMonitoring() {
+        let monitoredRegions = locationManager.monitoredRegions
+        for region in monitoredRegions {
+            if let circularRegion = region as? CLCircularRegion {
+                locationManager.stopMonitoring(for: circularRegion)
+            }
+        }
+        locationManager.stopUpdatingLocation()
+    }
+    
+    // MARK: Delegate methods
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        locationAlwaysPermissionGranted = manager.authorizationStatus == .authorizedAlways
+    }
+    
+    // CLLocationManagerDelegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let currentLocation = locations.last else { return }
+        
+        let homeCoordinate = CLLocationCoordinate2D(latitude: settings.homeLatitude, longitude: settings.homeLongitude)
+        let homeRadius = settings.homeRadiusInMeters
+        
+        let region = CLCircularRegion(center: homeCoordinate, radius: homeRadius, identifier: "HomeRegion")
+        self.inRadius = region.contains(currentLocation.coordinate)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        if region.identifier == "HomeRegion" {
+            self.inRadius = true
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if region.identifier == "HomeRegion" {
+            self.inRadius = false
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Monitoring failed for region: \(String(describing: region?.identifier)) with error: \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager failed with error: \(error.localizedDescription)")
+    }
 }

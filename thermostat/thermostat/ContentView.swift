@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         return VStack {
-            if location.locationPermissionWasApproved {
+            if location.locationAlwaysPermissionGranted {
                 TabView() {
                     ControlPanelView()
                         .tabItem {
