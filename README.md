@@ -9,6 +9,11 @@ This project is an iOS app (and server) to help you save on your energy bill. By
 
 ## Technology Overview
 
+![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-0078D7?style=for-the-badge&logo=swift&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+
 iOS:
 
 - Swift
@@ -47,8 +52,7 @@ Search for the address you want to mark as your home.
   </tr>
 </table>
 
-Now as you approach your home, the thermostat will automatically turn on, and disable as you leave, reducing wasted energy temperature-controlling your home.
-
+Now as you approach your home, the thermostat will automatically turn on, and disable as you leave, reducing wasted energy temperature-controlling your home, even in the background.
 
 <table>
   <tr>
