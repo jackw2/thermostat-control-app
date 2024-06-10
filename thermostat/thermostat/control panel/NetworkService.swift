@@ -44,6 +44,20 @@ class NetworkService {
         connectionCheckTimer?.invalidate()
     }
     
+    // MARK: Limiting guards
+    func serverNotSetupYet() -> Bool {
+        return serverURL == ""
+    }
+    
+    func shouldRateLimit(lastRequestTime: inout Date?, rateLimitSeconds: Double = 10.0, _ callerName: String = #function) -> Bool {
+        if let lastRequestTime = lastRequestTime, Date().timeIntervalSince(lastRequestTime) < rateLimitSeconds {
+            print("\(callerName):: request rate limited")
+            return true
+        }
+        lastRequestTime = Date()
+        return false
+    }
+    
     // MARK: Get
     func checkConnection() {
         AF.request("\(serverURL)/", headers: defaultHeaders).validate().response { [weak self] response in
@@ -62,16 +76,11 @@ class NetworkService {
     
     private var lastDeviceStatusRequestTime: Date?
     func getDeviceStatus() {
-        guard serverURL != "" else {
-            return
-        }
         
-        // rate limit getting the status
-        if let lastRequestTime = lastDeviceStatusRequestTime, Date().timeIntervalSince(lastRequestTime) < 10 {
-            print("getDeviceStatus request rate limited")
+        guard serverNotSetupYet() &&
+        shouldRateLimit(lastRequestTime: &lastDeviceStatusRequestTime, rateLimitSeconds: 10) else {
             return
         }
-        lastDeviceStatusRequestTime = Date()
         
         let url = serverURL + "/device_status"
         
@@ -91,6 +100,10 @@ class NetworkService {
     
     // MARK: Set controls
     func postWithAuthorization(url: String, parameters: [String: Any]) {
+        guard serverNotSetupYet() else {
+            return
+        }
+        
         AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralResponse.self) { [weak self] response in
             guard let self = self else { return }
             switch response.result {
@@ -139,6 +152,8 @@ class NetworkService {
         let parameters: [String: Any] = [
             "location": location,
         ]
+        
+        print("Attempting to set location: \(location)")
         
         postWithAuthorization(url: url, parameters: parameters)
     }

@@ -12,20 +12,25 @@ import Combine
 class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let settings: SettingsModel
     private let thermostat: ThermostatModel
+    private var cancellables: Set<AnyCancellable> = []
     
     let locationManager: CLLocationManager
-    private var inRadius: Bool = false {
+    @Published var inRadius: Bool = false {
         didSet {
             thermostat.awayMode = inRadius ? .home : .away
+        }
+    }
+    func setInRadiusOnlyPublishingIfNeeded(_ val: Bool) {
+        if inRadius != val {
+            inRadius = val
         }
     }
     
     init(settings: SettingsModel, thermostat: ThermostatModel) {
         self.settings = settings
         self.thermostat = thermostat
-        
-        // location manager delegate
         self.locationManager = CLLocationManager()
+        
         super.init()
         
         self.locationManager.delegate = self
@@ -33,13 +38,13 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.locationManager.allowsBackgroundLocationUpdates = true
         self.locationManager.pausesLocationUpdatesAutomatically = true
         
-        
+        observeSettingsChanges()
     }
     
     @Published var locationAlwaysPermissionGranted = false
     func requestLocationAuthorization() {
         if locationManager.authorizationStatus != .authorizedAlways {
-            // apple requires requesting when in use before always permission
+            // Apple requires requesting when in use before always permission
             locationManager.requestWhenInUseAuthorization()
             
             if locationManager.authorizationStatus != .authorizedAlways {
@@ -49,6 +54,14 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
         
         locationAlwaysPermissionGranted = locationManager.authorizationStatus == .authorizedAlways
+    }
+    
+    private func observeSettingsChanges() {
+        settings.$homeDidChange
+            .sink { [weak self] _ in
+                self?.restartMonitoring()
+            }
+            .store(in: &cancellables)
     }
     
     // MARK: Monitoring
@@ -74,6 +87,11 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
     
+    func restartMonitoring() {
+        stopMonitoring()
+        startMonitoring()
+    }
+    
     // MARK: Delegate methods
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationAlwaysPermissionGranted = manager.authorizationStatus == .authorizedAlways
@@ -87,18 +105,18 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let homeRadius = settings.homeRadiusInMeters
         
         let region = CLCircularRegion(center: homeCoordinate, radius: homeRadius, identifier: "HomeRegion")
-        self.inRadius = region.contains(currentLocation.coordinate)
+        setInRadiusOnlyPublishingIfNeeded(region.contains(currentLocation.coordinate))
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region.identifier == "HomeRegion" {
-            self.inRadius = true
+            setInRadiusOnlyPublishingIfNeeded(true)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         if region.identifier == "HomeRegion" {
-            self.inRadius = false
+            setInRadiusOnlyPublishingIfNeeded(false)
         }
     }
     
