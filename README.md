@@ -36,38 +36,6 @@ Server:
 - Python
 - FastAPI - Exposing thermostat functionality to the internet via a REST API
 
-## iOS Setup
-
-Set the temperature, fan settings, and mode here. You can monitor the temperature and the status of your thermostat.
-
-<img src="./readme-images/control-panel.png" width="300"/>
-
-Connect to the server, rename your home, and set the radius where you want the thermostat to begin heating/cooling.
-<table>
-  <tr>
-    <td><img src="./readme-images/settings-empty.png" width="300"/></td>
-    <td><img src="./readme-images/settings.png" width="300"/></td>
-  </tr>
-</table>
-
-Search for the address you want to mark as your home.
-
-<table>
-  <tr>
-    <td><img src="./readme-images/address-search.png" width="300"/></td>
-    <td><img src="./readme-images/saving-address.png" width="300"/></td>
-  </tr>
-</table>
-
-Now as you approach your home, the thermostat will automatically turn on, and disable as you leave, reducing wasted energy temperature-controlling your home, even in the background.
-
-<table>
-  <tr>
-    <td><img src="./readme-images/away.png" width="300"/></td>
-    <td><img src="./readme-images/home.png" width="300"/></td>
-  </tr>
-</table>
-
 ## Server Setup
 
 ```
@@ -99,6 +67,38 @@ curl https://get.telebit.io/ | bash
 ```
 
 Et Voila! You can confirm the server is running by visiting the root endpoint, or by using the iOS App. 
+
+## iOS Setup
+
+Set the temperature, fan settings, and mode here. You can monitor the temperature and the status of your thermostat.
+
+<img src="./readme-images/control-panel.png" width="300"/>
+
+Connect to the server, rename your home, and set the radius where you want the thermostat to begin heating/cooling.
+<table>
+  <tr>
+    <td><img src="./readme-images/settings-empty.png" width="300"/></td>
+    <td><img src="./readme-images/settings.png" width="300"/></td>
+  </tr>
+</table>
+
+Search for the address you want to mark as your home.
+
+<table>
+  <tr>
+    <td><img src="./readme-images/address-search.png" width="300"/></td>
+    <td><img src="./readme-images/saving-address.png" width="300"/></td>
+  </tr>
+</table>
+
+Now as you approach your home, the thermostat will automatically turn on, and disable as you leave, reducing wasted energy temperature-controlling your home, even in the background.
+
+<table>
+  <tr>
+    <td><img src="./readme-images/away.png" width="300"/></td>
+    <td><img src="./readme-images/home.png" width="300"/></td>
+  </tr>
+</table>
 
 ## Compatibility
 
