@@ -33,11 +33,16 @@ struct ContentView: View {
                 }
             }
             else {
-                Button(action: {
-                    location.requestLocationAuthorization()
-                }) {
-                    Text("Location permission is required to use this app. Go to settings or tap to request permission.")
+                VStack {
+                    Text("The app requires your location to enable and disable your thermostat.")
+                        .padding()
+                    Button(action: {
+                        location.requestLocationAuthorization()
+                    }) {
+                        Text("Request Permission")
+                    }
                 }
+                .padding()
             }
         }
     }
