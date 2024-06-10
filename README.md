@@ -13,9 +13,9 @@ This project is an iOS app (and server) to help you save on your energy bill. By
 <table>
   <tr>
     <td><img src="./readme-images/thermostat.jpg" width="300"/></td>
-    <td><img src="./readme-images/control-panel.png" height="300"/></td>
-    <td><td><img src="./readme-images/home.png" height="300"/></td></td>
-    <td><td><img src="./readme-images/icon-transparent.png" height="100"/></td></td>
+    <td><img src="./readme-images/control-panel.png" width="150"/></td>
+    <td><td><img src="./readme-images/home.png" width="150"/></td></td>
+    <td><td><img src="./readme-images/icon-transparent.png" width="100"/></td></td>
   </tr>
 </table>
     
