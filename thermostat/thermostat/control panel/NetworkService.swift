@@ -46,7 +46,11 @@ class NetworkService {
     
     // MARK: Limiting guards
     func serverNotSetupYet() -> Bool {
-        return serverURL == ""
+        let notSetup = serverURL == ""
+        if notSetup {
+            print("Server not setup yet, blocking request.")
+        }
+        return notSetup
     }
     
     func shouldRateLimit(lastRequestTime: inout Date?, rateLimitSeconds: Double = 10.0, _ callerName: String = #function) -> Bool {
