@@ -1,33 +1,39 @@
 # Location Based Thermostat Control for iOS
 
-## Concept Overview
-
-This project is an iOS app (and server) to help you save on your energy bill. By using your location, the app adjusts your thermostat's heating & cooling while you are away!
-
-
-<img src="./readme-images/thermostat.jpg" width="300"/>
-
-## Technology Overview
-
 ![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-0078D7?style=for-the-badge&logo=swift&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
+## Concept Overview
+
+This project is an iOS app (and server) to help you save on your energy bill. By using your location, the app adjusts your thermostat's heating & cooling while you are away!
+
+
+<table>
+  <tr>
+    <td><img src="./readme-images/thermostat.jpg" width="300"/></td>
+    <td><img src="./readme-images/control-panel.png" height="300"/></td>
+    <td><td><img src="./readme-images/home.png" height="300"/></td></td>
+  </tr>
+</table>
+    
+## Technology Overview
+
 iOS:
 
 - Swift
-- Combine - used for implementing the Observer pattern, much like ReactiveX
-- Security / Keychain - for securely storing the password on the device
-- Alamofire - handling requests to the server
-- CoreLocation - tracking the user's location 
-- MapKit - displaying the users location
-- SwiftUI - building the UI
+- Combine - Reactive programming framework for implementing the Observer pattern, much like ReactiveX
+- Security / Keychain - Securely storing the password on the device
+- Alamofire - HTTP networking library for handling requests to the server
+- CoreLocation - Framework for location tracking 
+- MapKit - Apple Maps provider for displaying the users location
+- SwiftUI - Declarative framework for UI
 
 Server:
 
 - Python
-- FastAPI - exposing some thermostat functionality to the internet via a REST API
+- FastAPI - Exposing thermostat functionality to the internet via a REST API
 
 ## iOS Setup
 
