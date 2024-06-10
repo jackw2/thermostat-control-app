@@ -20,23 +20,17 @@ struct MapOverwatchView: View {
         return Map(position: $cameraPosition) {
             UserAnnotation()
             if let lastCoord = location.locationManager.location?.coordinate {
-                Marker("Last Updated Location", coordinate: lastCoord)
+                Marker("Location of last home/away switch", coordinate: lastCoord)
             }
             
             Marker(settings.homeTitle, coordinate: homeCoords)
-                .tint(.blue)
+                .tint(location.inRadius ? .blue: .red)
             MapCircle(center: homeCoords, radius: settings.homeRadiusInMeters)
                 .stroke(location.inRadius ? Color.green.opacity(0.5) : Color.red.opacity(0.5), lineWidth: 5)
                 .foregroundStyle(location.inRadius ? Color.green.opacity(0.2) : Color.red.opacity(0.2))
                 .mapOverlayLevel(level: .aboveLabels)
         }
         .mapStyle(.standard(elevation: .flat, emphasis: .muted, pointsOfInterest: .excludingAll, showsTraffic: false))
-        .onAppear() {
-            location.startMonitoring()
-        }
-        .onDisappear() {
-            location.stopMonitoring()
-        }
     }
 }
 

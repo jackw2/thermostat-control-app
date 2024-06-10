@@ -34,14 +34,29 @@ class SettingsModel: ObservableObject {
 
     // MARK: Home settings
     // Home address defaulting to the White House on first launch
-    @AppStorage("homeTitle") var homeTitle: String = "The White House"
-    @AppStorage("homeLatitude") var homeLatitude: Double = 38.897957
-    @AppStorage("homeLongitude") var homeLongitude: Double = 38.897957
-    
-    // MARK: Misc settings
-    @AppStorage("homeRadiusInMiles") var homeRadiusInMiles: Int = 1
+    @AppStorage("homeTitle") var homeTitle: String = "The White House" {
+        didSet {
+            homeDidChange += 1
+        }
+    }
+    @AppStorage("homeLatitude") var homeLatitude: Double = 38.897957 {
+        didSet {
+            homeDidChange += 1
+        }
+    }
+    @AppStorage("homeLongitude") var homeLongitude: Double = 38.897957 {
+        didSet {
+            homeDidChange += 1
+        }
+    }
+    @AppStorage("homeRadiusInMiles") var homeRadiusInMiles: Int = 1 {
+        didSet {
+            homeDidChange += 1
+        }
+    }
     var homeRadiusInMeters: Double {
         // 1 mile = 1609.34 meters
         return Double(homeRadiusInMiles) * 1609.34
     }
+    @Published var homeDidChange: Int = 1
 }

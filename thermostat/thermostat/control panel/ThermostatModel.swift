@@ -104,22 +104,34 @@ class ThermostatModel: ObservableObject {
     }
     
     var statusText: String {
-        if fanState == .on && thermostatState == .idle {
-            return "Fans Running"
+        var result: [String] = []
+        
+        result.append(self.awayMode == .away ? "Away" : "Home")
+        
+        let stateText = {
+            switch thermostatState {
+            case .heating:
+                return "Heating"
+            case .cooling:
+                return "Cooling"
+            case .lockout:
+                return "Lockout"
+            case .error:
+                return "Error"
+            default:
+                return "Idle"
+            }
+        }()
+        
+        if !(thermostatState == .idle && fanState == .on) {
+            result.append(stateText)
         }
         
-        switch thermostatState {
-        case .heating:
-            return "Heating"
-        case .cooling:
-            return "Cooling"
-        case .lockout:
-            return "Lockout"
-        case .error:
-            return "Error"
-        default:
-            return "Idle"
+        if fanState == .on {
+            result.append("Fans Running")
         }
+        
+        return result.joined(separator: ", ")
     }
     
     func refresh() {

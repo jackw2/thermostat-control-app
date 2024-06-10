@@ -29,6 +29,9 @@ struct thermostatApp: App {
                 .environmentObject(settings)
                 .environmentObject(thermostat)
                 .environmentObject(location)
+                .onAppear {
+                    location.startMonitoring()
+                }
         }
     }
 }

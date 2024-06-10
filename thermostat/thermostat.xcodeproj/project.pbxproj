@@ -82,7 +82,7 @@
 		04A903812C0E7541008F0BF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04A903962C0E83F5008F0BF2 /* MapOverwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOverwatchView.swift; sourceTree = "<group>"; };
 		04ED4C8C2C150E3E00A488AF /* PickerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControl.swift; sourceTree = "<group>"; };
-		04ED4C912C15301600A488AF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = thermostat/NetworkService.swift; sourceTree = SOURCE_ROOT; };
+		04ED4C912C15301600A488AF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = "thermostat/control panel/NetworkService.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				047498B02C15028000CBD8B8 /* ThermostatModel.swift */,
+				04ED4C912C15301600A488AF /* NetworkService.swift */,
 				047498AC2C1500FF00CBD8B8 /* ControlPanelView.swift */,
 				0422F7DB2C0EA61D00E90FF3 /* ConnectionIndicatorView.swift */,
 				0422F7D92C0E970300E90FF3 /* StepperControl.swift */,
@@ -162,7 +163,6 @@
 				0422F7D22C0E94FA00E90FF3 /* search */,
 				04A903932C0E7A2D008F0BF2 /* map */,
 				0422F7D72C0E966400E90FF3 /* control panel */,
-				04ED4C912C15301600A488AF /* NetworkService.swift */,
 				04A903682C0E753F008F0BF2 /* thermostatApp.swift */,
 				04A9036A2C0E753F008F0BF2 /* ContentView.swift */,
 				04A9036C2C0E7540008F0BF2 /* Assets.xcassets */,
