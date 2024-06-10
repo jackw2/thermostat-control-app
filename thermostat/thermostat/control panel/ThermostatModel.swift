@@ -104,9 +104,13 @@ class ThermostatModel: ObservableObject {
     }
     
     var statusText: String {
+        if !isConnected {
+            return ""
+        }
+        
         var result: [String] = []
         
-        result.append(self.awayMode == .away ? "Away" : "Home")
+        result.append(self.awayMode == .away ? "Status: Away" : "Status: Home")
         
         let stateText = {
             switch thermostatState {
@@ -169,7 +173,6 @@ class ThermostatModel: ObservableObject {
         refreshTimer = Timer.publish(every: 15, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
-                print("Thermostat status refreshing")
                 self?.refresh()
             }
         refresh()

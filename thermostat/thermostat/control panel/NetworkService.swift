@@ -45,12 +45,12 @@ class NetworkService {
     }
     
     // MARK: Limiting guards
-    func serverNotSetupYet() -> Bool {
-        let notSetup = serverURL == ""
-        if notSetup {
+    func serverUrlIsSet() -> Bool {
+        let setup = serverURL != ""
+        if !setup {
             print("Server not setup yet, blocking request.")
         }
-        return notSetup
+        return setup
     }
     
     func shouldRateLimit(lastRequestTime: inout Date?, rateLimitSeconds: Double = 10.0, _ callerName: String = #function) -> Bool {
@@ -72,6 +72,7 @@ class NetworkService {
                     print("Connected to " + self.serverURL)
                     self.thermostat.isConnected = true
                 case .failure:
+                    print("Could not connect to " + self.serverURL)
                     self.thermostat.isConnected = false
                 }
             }
@@ -81,10 +82,11 @@ class NetworkService {
     private var lastDeviceStatusRequestTime: Date?
     func getDeviceStatus() {
         
-        guard serverNotSetupYet() &&
-        shouldRateLimit(lastRequestTime: &lastDeviceStatusRequestTime, rateLimitSeconds: 10) else {
+        guard serverUrlIsSet() &&
+        shouldRateLimit(lastRequestTime: &lastDeviceStatusRequestTime, rateLimitSeconds: 10) == false else {
             return
         }
+        print("Getting thermostat status")
         
         let url = serverURL + "/device_status"
         
@@ -104,9 +106,11 @@ class NetworkService {
     
     // MARK: Set controls
     func postWithAuthorization(url: String, parameters: [String: Any]) {
-        guard serverNotSetupYet() else {
+        guard serverUrlIsSet() else {
             return
         }
+        
+        print("Attempting to post: \(url) with \(parameters)")
         
         AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: defaultHeaders).validate().responseDecodable(of: GeneralResponse.self) { [weak self] response in
             guard let self = self else { return }
@@ -156,8 +160,6 @@ class NetworkService {
         let parameters: [String: Any] = [
             "location": location,
         ]
-        
-        print("Attempting to set location: \(location)")
         
         postWithAuthorization(url: url, parameters: parameters)
     }

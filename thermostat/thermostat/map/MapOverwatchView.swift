@@ -19,12 +19,8 @@ struct MapOverwatchView: View {
         
         return Map(position: $cameraPosition) {
             UserAnnotation()
-            if let lastCoord = location.locationManager.location?.coordinate {
-                Marker("Location of last home/away switch", coordinate: lastCoord)
-            }
-            
             Marker(settings.homeTitle, coordinate: homeCoords)
-                .tint(location.inRadius ? .blue: .red)
+                .tint(location.inRadius ? .green: .red)
             MapCircle(center: homeCoords, radius: settings.homeRadiusInMeters)
                 .stroke(location.inRadius ? Color.green.opacity(0.5) : Color.red.opacity(0.5), lineWidth: 5)
                 .foregroundStyle(location.inRadius ? Color.green.opacity(0.2) : Color.red.opacity(0.2))

@@ -28,7 +28,7 @@ struct ControlPanelView: View {
             if let errorMessage = thermostat.serverErrorMessage {
                 Text("Server Error: " + errorMessage)
             }
-            Text("Status: " + thermostat.statusText)
+            Text(thermostat.statusText)
             VStack {
                 HStack {
                     PickerControl(pickedValue: $thermostat.fanMode, title: "Fan", systemImage: "fan")
