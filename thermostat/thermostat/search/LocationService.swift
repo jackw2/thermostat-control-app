@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import Observation
 
 struct SearchResult: Identifiable, Hashable {
     let id = UUID()

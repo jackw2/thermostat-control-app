@@ -1,6 +1,47 @@
-# Venstar Colortouch Thermostat Control via iOS
+# Location Based Thermostat Control for iOS
 
-This project is an iOS app and server built with fastapi to enable your Venstar Colortouch thermostat to automatically reduce it's heating/cooling when you are away from home based on the location services of your iPhone.
+## Concept Overview
+
+This project is an iOS app (and server) to help you save on your energy bill. By using your location, the app adjusts your thermostat's heating & cooling while you are away!
+
+
+<img src="./readme-images/thermostat.jpg" width="300"/>
+
+## Technology Overview
+
+iOS:
+
+- Combine - used for implementing the Observer pattern, much like ReactiveX
+- Security / Keychain - for securely storing the password on the device
+- Alamofire - handling requests to the server
+- CoreLocation - tracking the user's location 
+- MapKit - displaying the users location
+- SwiftUI - building the UI
+
+Server:
+
+- FastAPI - exposing some thermostat functionality to the internet via a REST API
+
+## iOS Setup
+
+You can set the temperature, fan settings, and mode here.
+
+<img src="./readme-images/control-panel.png" width="300"/>
+
+Connect to the server, rename your home, and set the radius where you want the thermostat to begin heating/cooling.
+
+<img src="./readme-images/settings-empty.png" width="300"/>
+<img src="./readme-images/settings.png" width="300"/>
+
+Search for the address you want to mark as your home.
+
+<img src="./readme-images/address-search.png" width="300"/>
+<img src="./readme-images/saving-address.png" width="300"/>
+
+Now as you approach your home, the thermostat will automatically turn on, and disable as you leave, reducing wasted energy temperature-controlling your home.
+
+<img src="./readme-images/away.png" width="300"/>
+<img src="./readme-images/home.png" width="300"/>
 
 ## Server Setup
 
