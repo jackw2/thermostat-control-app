@@ -24,17 +24,17 @@ This project is an iOS app (and server) to help you save on your energy bill. By
 iOS:
 
 - Swift
-- Combine - Reactive programming framework for implementing the Observer pattern, much like ReactiveX
-- Security / Keychain - Securely storing the password on the device
-- Alamofire - HTTP networking library for handling requests to the server
-- CoreLocation - Framework for location tracking 
-- MapKit - Apple Maps provider for displaying the users location
-- SwiftUI - Declarative framework for UI
+- SwiftUI
+- Combine
+- Security / Keychain
+- Alamofire
+- CoreLocation
+- MapKit
 
 Server:
 
 - Python
-- FastAPI - Exposing thermostat functionality to the internet via a REST API
+- FastAPI
 
 ## Server Setup
 
